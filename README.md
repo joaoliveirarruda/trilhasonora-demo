@@ -1,5 +1,7 @@
 # TrilhaFlix — demo
 
+**URL pública:** <https://joaoliveirarruda.github.io/trilhaflix-demo/>
+
 Demo navegável do mini-projeto TrilhaFlix do bloco Python Básico do Trilha.
 A página roda 100% no browser via [Pyodide](https://pyodide.org) e
 [xterm.js](https://xtermjs.org).
