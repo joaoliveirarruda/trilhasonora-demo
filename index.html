@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrilhaFlix — demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>TrilhaFlix</h1>
+    <p>Demo do mini-projeto que fecha o bloco Python Básico do Trilha.
+       Catálogo de 60 conteúdos rodando 100% no seu browser.</p>
+  </header>
+
+  <div id="status">Carregando Python no browser…</div>
+  <div id="terminal"></div>
+
+  <footer>
+    <p>O catálogo carregado aqui é uma versão pequena (60 itens) do dataset que
+       os alunos recebem no projeto real (20 000 itens).</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
