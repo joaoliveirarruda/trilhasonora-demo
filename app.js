@@ -1,0 +1,245 @@
+const statusEl = document.getElementById("status");
+const termEl = document.getElementById("terminal");
+
+const term = new Terminal({
+  fontSize: 14,
+  fontFamily: 'ui-monospace, "SF Mono", Menlo, monospace',
+  theme: {
+    background: "#000000",
+    foreground: "#e8e8ec",
+    cursor: "#ff3b6b",
+  },
+  cursorBlink: true,
+  convertEol: true,
+});
+const fitAddon = new FitAddon.FitAddon();
+term.loadAddon(fitAddon);
+term.open(termEl);
+fitAddon.fit();
+window.addEventListener("resize", () => fitAddon.fit());
+
+function setStatus(text, kind = "") {
+  statusEl.textContent = text;
+  statusEl.className = kind;
+}
+
+async function fetchText(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`fetch ${url}: ${r.status}`);
+  return await r.text();
+}
+
+async function bootstrap() {
+  setStatus("Carregando Python no browser… (~10MB na primeira visita)");
+  const pyodide = await loadPyodide({
+    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.26.4/full/",
+  });
+
+  setStatus("Carregando catálogo…");
+  const catalogoPy = await fetchText("solucao/catalogo.py");
+  const catalogoJson = await fetchText("catalogo_dev.json");
+  pyodide.FS.writeFile("/catalogo.py", catalogoPy);
+  pyodide.FS.writeFile("/catalogo_dev.json", catalogoJson);
+  pyodide.runPython(`
+import sys
+sys.path.insert(0, "/")
+from catalogo import Catalogo
+catalogo = Catalogo("/catalogo_dev.json")
+`);
+
+  setStatus("Pronto.", "ready");
+  return pyodide;
+}
+
+// --- Leitor de linha do xterm ---
+
+let resolveLine = null;
+let lineBuffer = "";
+
+term.onData((data) => {
+  if (resolveLine === null) return;       // ignora teclas fora do prompt
+  for (const ch of data) {
+    const code = ch.charCodeAt(0);
+    if (code === 13) {                    // Enter
+      term.write("\r\n");
+      const line = lineBuffer;
+      lineBuffer = "";
+      const r = resolveLine;
+      resolveLine = null;
+      r(line);
+      return;
+    }
+    if (code === 127 || code === 8) {     // backspace / DEL
+      if (lineBuffer.length > 0) {
+        lineBuffer = lineBuffer.slice(0, -1);
+        term.write("\b \b");
+      }
+      continue;
+    }
+    if (code < 32) continue;              // ignora outros controles
+    lineBuffer += ch;
+    term.write(ch);
+  }
+});
+
+function lerLinha(prompt) {
+  term.write(prompt);
+  return new Promise((resolve) => { resolveLine = resolve; });
+}
+
+// --- Chamadas à Catalogo (via Pyodide) ---
+
+function py(pyodide) {
+  const cat = pyodide.globals.get("catalogo");
+  const toJS = (v) => v && typeof v.toJs === "function" ? v.toJs() : v;
+  const call = (m, ...args) => toJS(cat[m](...args));
+  return {
+    buscar_usuario_por_nome: (nome) => call("buscar_usuario_por_nome", nome),
+    playlist_de: (uid) => call("playlist_de", uid),
+    conteudo_na_posicao: (uid, pos) => call("conteudo_na_posicao", uid, pos),
+    intersecao_playlists: (uids) => call("intersecao_playlists", pyodide.toPy(uids)),
+    rating_de: (id) => call("rating_de", id),
+    duracao_total_de: (id) => call("duracao_total_de", id),
+    generos_de: (id) => call("generos_de", id),
+    plataformas_de: (id) => call("plataformas_de", id),
+    data_adicionado_de: (id) => call("data_adicionado_de", id),
+    execucoes_de: (id) => call("execucoes_de", id),
+    conteudos_do_genero: (g) => call("conteudos_do_genero", g),
+    descricao_curta: (id) => call("descricao_curta", id),
+    nome_do_usuario: (uid) => call("nome_do_usuario", uid),
+    tipo_de: (id) => call("tipo_de", id),
+  };
+}
+
+// --- Formatadores ---
+
+function fmtDuracao(seg) {
+  if (seg == null) return "—";
+  const h = Math.floor(seg / 3600);
+  const m = Math.floor((seg % 3600) / 60);
+  const s = seg % 60;
+  if (h > 0) return `${h}h${m.toString().padStart(2, "0")}m${s.toString().padStart(2, "0")}s`;
+  return `${m}m${s.toString().padStart(2, "0")}s`;
+}
+
+function fmtNumero(n) {
+  if (n == null) return "—";
+  return n.toLocaleString("pt-BR");
+}
+
+// --- Handlers de cada opção do menu ---
+
+async function opBuscarUsuario(api) {
+  const nome = await lerLinha("Nome do usuário: ");
+  const id = api.buscar_usuario_por_nome(nome.trim());
+  if (id === null) term.writeln(`Usuário "${nome}" não encontrado.`);
+  else            term.writeln(`Encontrado: ${nome} → id ${id}`);
+}
+
+async function opVerPlaylist(api) {
+  const uid = (await lerLinha("ID do usuário (ex.: u17): ")).trim();
+  const playlist = api.playlist_de(uid);
+  if (playlist === null) { term.writeln("Usuário inexistente."); return; }
+  const nome = api.nome_do_usuario(uid);
+  term.writeln(`Playlist de ${nome} (${playlist.length} itens):`);
+  for (let i = 0; i < playlist.length; i++) {
+    term.writeln(`  ${(i + 1).toString().padStart(2)}. ${api.descricao_curta(playlist[i])}`);
+  }
+}
+
+async function opConteudoNaPosicao(api) {
+  const uid = (await lerLinha("ID do usuário (ex.: u17): ")).trim();
+  const posStr = (await lerLinha("Posição (começando em 0): ")).trim();
+  const pos = parseInt(posStr, 10);
+  if (Number.isNaN(pos)) { term.writeln("Posição inválida."); return; }
+  const cid = api.conteudo_na_posicao(uid, pos);
+  if (cid === null) term.writeln("Usuário inexistente ou posição fora do range.");
+  else              term.writeln(`Posição ${pos}: ${api.descricao_curta(cid)} (id ${cid})`);
+}
+
+async function opIntersecao(api) {
+  const raw = await lerLinha("IDs dos usuários separados por vírgula (ex.: u17,u23): ");
+  const uids = raw.split(",").map((s) => s.trim()).filter(Boolean);
+  if (uids.length < 2) { term.writeln("Informe pelo menos 2 usuários."); return; }
+  const ids = api.intersecao_playlists(uids);
+  if (ids.length === 0) {
+    term.writeln("Sem interseção (ou algum usuário não existe).");
+    return;
+  }
+  term.writeln(`Interseção (${ids.length} conteúdos):`);
+  for (const cid of ids) term.writeln(`  - ${api.descricao_curta(cid)} (${cid})`);
+}
+
+async function opDadosDoConteudo(api) {
+  const cid = (await lerLinha("ID do conteúdo (ex.: t000000): ")).trim();
+  const desc = api.descricao_curta(cid);
+  if (desc === null) { term.writeln("Conteúdo inexistente."); return; }
+  const tipo = api.tipo_de(cid);
+  term.writeln(desc);
+  term.writeln(`  rating:     ${api.rating_de(cid) ?? "—"}`);
+  term.writeln(`  duração:    ${fmtDuracao(api.duracao_total_de(cid))}`);
+  term.writeln(`  gêneros:    ${(api.generos_de(cid) || []).join(", ")}`);
+  term.writeln(`  plataformas:${" "}${(api.plataformas_de(cid) || []).join(", ")}`);
+  term.writeln(`  adicionado: ${api.data_adicionado_de(cid)}`);
+  if (tipo === "musica") {
+    term.writeln(`  execuções:  ${fmtNumero(api.execucoes_de(cid))}`);
+  }
+}
+
+async function opConteudosDoGenero(api) {
+  const g = (await lerLinha("Gênero (ex.: Pop): ")).trim();
+  const ids = api.conteudos_do_genero(g);
+  if (ids.length === 0) { term.writeln("Nenhum conteúdo nesse gênero."); return; }
+  term.writeln(`${ids.length} conteúdos em "${g}":`);
+  const max = Math.min(ids.length, 20);
+  for (let i = 0; i < max; i++) term.writeln(`  - ${api.descricao_curta(ids[i])} (${ids[i]})`);
+  if (ids.length > max) term.writeln(`  … e mais ${ids.length - max}.`);
+}
+
+const MENU = [
+  "1. Buscar usuário por nome",
+  "2. Ver playlist completa de um usuário",
+  "3. Conteúdo na posição N da playlist",
+  "4. Interseção de playlists (N usuários)",
+  "5. Dados de um conteúdo (rating, duração, gêneros, plataformas, data, execuções)",
+  "6. Conteúdos de um gênero",
+  "0. Sair",
+];
+
+async function loopMenu(api) {
+  while (true) {
+    term.writeln("");
+    term.writeln("TrilhaFlix");
+    term.writeln("==========");
+    for (const linha of MENU) term.writeln(linha);
+    const escolha = (await lerLinha("> ")).trim();
+    if (escolha === "0") { term.writeln("Tchau."); return; }
+    try {
+      if      (escolha === "1") await opBuscarUsuario(api);
+      else if (escolha === "2") await opVerPlaylist(api);
+      else if (escolha === "3") await opConteudoNaPosicao(api);
+      else if (escolha === "4") await opIntersecao(api);
+      else if (escolha === "5") await opDadosDoConteudo(api);
+      else if (escolha === "6") await opConteudosDoGenero(api);
+      else                       term.writeln("Opção inválida.");
+    } catch (err) {
+      term.writeln(`Erro: ${err.message}`);
+      console.error(err);
+    }
+  }
+}
+
+// --- Entry point ---
+
+bootstrap().then((pyodide) => {
+  term.writeln("TrilhaFlix — demo (catálogo: 60 itens)");
+  term.writeln("");
+  const api = py(pyodide);
+  loopMenu(api).catch((err) => {
+    term.writeln(`Loop encerrou com erro: ${err.message}`);
+    console.error(err);
+  });
+}).catch((err) => {
+  setStatus("Erro no carregamento: " + err.message, "error");
+  console.error(err);
+});
