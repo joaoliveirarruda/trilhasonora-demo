@@ -1,0 +1,3209 @@
+{
+  "plataforma": "TrilhaFlix",
+  "meta": {
+    "seed": 2026,
+    "total_conteudos": 60,
+    "total_usuarios": 33,
+    "versao_schema": 3
+  },
+  "conteudos": [
+    {
+      "id": "t000000",
+      "tipo": "album",
+      "titulo": "Folklore",
+      "artista": "Taylor Swift",
+      "ano": 2020,
+      "generos": [
+        "Indie Pop",
+        "Folk"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "Deezer",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2020-03-04",
+      "rating": 8.9,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Quase Tudo",
+          "duracao_seg": 223
+        },
+        {
+          "numero": 2,
+          "titulo": "Vento de Caminho",
+          "duracao_seg": 128
+        },
+        {
+          "numero": 3,
+          "titulo": "A Despedida",
+          "duracao_seg": 300
+        },
+        {
+          "numero": 4,
+          "titulo": "Olhar (Pt. 3)",
+          "duracao_seg": 216
+        },
+        {
+          "numero": 5,
+          "titulo": "O Chuva",
+          "duracao_seg": 298
+        },
+        {
+          "numero": 6,
+          "titulo": "Promessa (Pt. 2)",
+          "duracao_seg": 135
+        },
+        {
+          "numero": 7,
+          "titulo": "Promessa",
+          "duracao_seg": 195
+        }
+      ]
+    },
+    {
+      "id": "t000001",
+      "tipo": "album",
+      "titulo": "Midnights",
+      "artista": "Taylor Swift",
+      "ano": 2022,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Spotify",
+        "YouTube Music"
+      ],
+      "data_adicionado": "11/09/2024",
+      "rating": 8.6,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Lua (Pt. 2)",
+          "duracao_seg": 177
+        },
+        {
+          "numero": 2,
+          "titulo": "Liberdade (Pt. 3)",
+          "duracao_seg": 193
+        },
+        {
+          "numero": 3,
+          "titulo": "Quase Tudo de Vida",
+          "duracao_seg": 228
+        },
+        {
+          "numero": 4,
+          "titulo": "Voz",
+          "duracao_seg": 274
+        },
+        {
+          "numero": 5,
+          "titulo": "Caminho",
+          "duracao_seg": 129
+        },
+        {
+          "numero": 6,
+          "titulo": "Estrela de Promessa",
+          "duracao_seg": 149
+        },
+        {
+          "numero": 7,
+          "titulo": "A Verdade",
+          "duracao_seg": 202
+        },
+        {
+          "numero": 8,
+          "titulo": "A Vida",
+          "duracao_seg": 321
+        },
+        {
+          "numero": 9,
+          "titulo": "Beijo",
+          "duracao_seg": 221
+        },
+        {
+          "numero": 10,
+          "titulo": "O Chuva",
+          "duracao_seg": 122
+        }
+      ]
+    },
+    {
+      "id": "t000002",
+      "tipo": "musica",
+      "titulo": "Cruel Summer",
+      "artista": "Taylor Swift",
+      "ano": 2019,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "SoundCloud",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2023-04-08",
+      "rating": 9.2,
+      "duracao_seg": 274,
+      "engajamento": {
+        "execucoes": 183404380,
+        "curtidas": 1212001
+      }
+    },
+    {
+      "id": "t000003",
+      "tipo": "musica",
+      "titulo": "Anti-Hero",
+      "artista": "Taylor Swift",
+      "ano": 2022,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "SoundCloud"
+      ],
+      "data_adicionado": "26/05/2024",
+      "rating": 7.8,
+      "duracao_seg": 152,
+      "engajamento": {
+        "execucoes": 51235388,
+        "curtidas": 3000157
+      }
+    },
+    {
+      "id": "t000004",
+      "tipo": "musica",
+      "titulo": "Vampire",
+      "artista": "Olivia Rodrigo",
+      "ano": 2023,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Spotify",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2020-10-12",
+      "rating": 7.9,
+      "duracao_seg": 253,
+      "engajamento": {
+        "execucoes": 71324277,
+        "curtidas": 482931
+      }
+    },
+    {
+      "id": "t000005",
+      "tipo": "album",
+      "titulo": "GUTS",
+      "artista": "Olivia Rodrigo",
+      "ano": 2023,
+      "generos": [
+        "Pop",
+        "Rock"
+      ],
+      "plataformas": [
+        "Deezer",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2020-04-03",
+      "rating": 9.3,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Sol de Vento",
+          "duracao_seg": 332
+        },
+        {
+          "numero": 2,
+          "titulo": "Amor",
+          "duracao_seg": 166
+        },
+        {
+          "numero": 3,
+          "titulo": "Verdade de Noite",
+          "duracao_seg": 261
+        },
+        {
+          "numero": 4,
+          "titulo": "Promessa de Silêncio",
+          "duracao_seg": 181
+        },
+        {
+          "numero": 5,
+          "titulo": "Beijo de Voz",
+          "duracao_seg": 170
+        },
+        {
+          "numero": 6,
+          "titulo": "Memória",
+          "duracao_seg": 259
+        }
+      ]
+    },
+    {
+      "id": "t000006",
+      "tipo": "musica",
+      "titulo": "Lumière",
+      "artista": "Lorien Testard",
+      "ano": 2025,
+      "generos": [
+        "Trilha Sonora",
+        [
+          "OST de Jogo"
+        ]
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2021-06-08",
+      "rating": 7.7,
+      "duracao_seg": 153,
+      "engajamento": {
+        "execucoes": 81121083,
+        "curtidas": 247962
+      }
+    },
+    {
+      "id": "t000007",
+      "tipo": "musica",
+      "titulo": "Une vie à t'aimer",
+      "artista": "Lorien Testard",
+      "ano": 2025,
+      "generos": [
+        "Trilha Sonora"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "SoundCloud",
+        "Spotify"
+      ],
+      "data_adicionado": "11/10/2019",
+      "rating": 8.7,
+      "duracao_seg": 190,
+      "engajamento": {
+        "execucoes": 42012345,
+        "curtidas": 2773735
+      }
+    },
+    {
+      "id": "t000008",
+      "tipo": "album",
+      "titulo": "Clair Obscur: Expedition 33 (OST)",
+      "artista": "Lorien Testard",
+      "ano": 2025,
+      "generos": [
+        "Trilha Sonora"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "Deezer",
+        "Spotify",
+        "YouTube Music"
+      ],
+      "data_adicionado": "19/02/2026",
+      "rating": 9.0,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "O Ainda Aqui",
+          "duracao_seg": 161
+        },
+        {
+          "numero": 2,
+          "titulo": "Caminho (Pt. 2)",
+          "duracao_seg": 343
+        },
+        {
+          "numero": 3,
+          "titulo": "Fogo",
+          "duracao_seg": 198
+        },
+        {
+          "numero": 4,
+          "titulo": "Para Sempre (Pt. 3)",
+          "duracao_seg": 174
+        },
+        {
+          "numero": 5,
+          "titulo": "Despedida",
+          "duracao_seg": 254
+        },
+        {
+          "numero": 6,
+          "titulo": "Saudade",
+          "duracao_seg": 209
+        },
+        {
+          "numero": 7,
+          "titulo": "A Lua",
+          "duracao_seg": 250
+        },
+        {
+          "numero": 8,
+          "titulo": "Voz (Pt. 3)",
+          "duracao_seg": 297
+        }
+      ]
+    },
+    {
+      "id": "t000009",
+      "tipo": "album",
+      "titulo": "Diamond Life",
+      "artista": "Sade",
+      "ano": 1984,
+      "generos": [
+        "Smooth Jazz",
+        "Soul"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "SoundCloud",
+        "Spotify",
+        "YouTube Music"
+      ],
+      "data_adicionado": "27/07/2023",
+      "rating": 8.5,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Vida",
+          "duracao_seg": 226
+        },
+        {
+          "numero": 2,
+          "titulo": "Amor",
+          "duracao_seg": 124
+        },
+        {
+          "numero": 3,
+          "titulo": "O Memória",
+          "duracao_seg": 122
+        },
+        {
+          "numero": 4,
+          "titulo": "Caminho",
+          "duracao_seg": 140
+        },
+        {
+          "numero": 5,
+          "titulo": "Memória de Verdade",
+          "duracao_seg": 220
+        },
+        {
+          "numero": 6,
+          "titulo": "A Memória",
+          "duracao_seg": 349
+        },
+        {
+          "numero": 7,
+          "titulo": "Lua (Pt. 2)",
+          "duracao_seg": 216
+        },
+        {
+          "numero": 8,
+          "titulo": "O Despedida",
+          "duracao_seg": 151
+        },
+        {
+          "numero": 9,
+          "titulo": "Lua (Pt. 2)",
+          "duracao_seg": 261
+        }
+      ]
+    },
+    {
+      "id": "t000010",
+      "tipo": "album",
+      "titulo": "Love Deluxe",
+      "artista": "Sade",
+      "ano": 1992,
+      "generos": [
+        "Soul",
+        "R&B"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Apple Music",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2020-10-21",
+      "rating": 9.0,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Voz (Pt. 3)",
+          "duracao_seg": null
+        },
+        {
+          "numero": 2,
+          "titulo": "O Lua",
+          "duracao_seg": 93
+        },
+        {
+          "numero": 3,
+          "titulo": "A Noite",
+          "duracao_seg": 306
+        },
+        {
+          "numero": 4,
+          "titulo": "Memória (Pt. 2)",
+          "duracao_seg": 94
+        },
+        {
+          "numero": 5,
+          "titulo": "Liberdade de Despedida",
+          "duracao_seg": 260
+        },
+        {
+          "numero": 6,
+          "titulo": "A Quase Tudo",
+          "duracao_seg": 146
+        },
+        {
+          "numero": 7,
+          "titulo": "Amor (Pt. 3)",
+          "duracao_seg": 348
+        },
+        {
+          "numero": 8,
+          "titulo": "Mar de Liberdade",
+          "duracao_seg": 215
+        },
+        {
+          "numero": 9,
+          "titulo": "O Ainda Aqui",
+          "duracao_seg": 250
+        },
+        {
+          "numero": 10,
+          "titulo": "Estrela de Mar",
+          "duracao_seg": 226
+        },
+        {
+          "numero": 11,
+          "titulo": "Sol (Pt. 2)",
+          "duracao_seg": 221
+        }
+      ]
+    },
+    {
+      "id": "t000011",
+      "tipo": "musica",
+      "titulo": "Smooth Operator",
+      "artista": "Sade",
+      "ano": 1984,
+      "generos": [
+        "Smooth Jazz"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer"
+      ],
+      "data_adicionado": "2020-11-07",
+      "rating": 7.7,
+      "duracao_seg": 227,
+      "engajamento": {
+        "execucoes": "134,505,974",
+        "curtidas": 2902288
+      }
+    },
+    {
+      "id": "t000012",
+      "tipo": "musica",
+      "titulo": "No Ordinary Love",
+      "artista": "Sade",
+      "ano": 1992,
+      "generos": [
+        "Soul"
+      ],
+      "plataformas": [
+        "Spotify",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2019-01-30",
+      "rating": 7.7,
+      "duracao_seg": 273,
+      "engajamento": {
+        "execucoes": 36797048,
+        "curtidas": 4695570
+      }
+    },
+    {
+      "id": "t000013",
+      "tipo": "musica",
+      "titulo": "By Your Side",
+      "artista": "Sade",
+      "ano": 2000,
+      "generos": [
+        "Soul"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "SoundCloud",
+        "Spotify",
+        "Tidal"
+      ],
+      "data_adicionado": "12/01/2021",
+      "rating": 9.4,
+      "duracao_seg": 314,
+      "engajamento": {
+        "execucoes": 8225073,
+        "curtidas": 4570292
+      }
+    },
+    {
+      "id": "t000014",
+      "tipo": "musica",
+      "titulo": "Conexões de Máster",
+      "artista": "Tz da Coronel",
+      "ano": 2022,
+      "generos": [
+        "Trap",
+        "Hip-Hop"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "SoundCloud",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2023-07-22",
+      "rating": 8.4,
+      "duracao_seg": 199,
+      "engajamento": {
+        "execucoes": "104,719,179",
+        "curtidas": 211059
+      }
+    },
+    {
+      "id": "t000015",
+      "tipo": "album",
+      "titulo": "Pode Acreditar",
+      "artista": "Tz da Coronel",
+      "ano": 2023,
+      "generos": [
+        "Trap"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "SoundCloud",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2023-11-12",
+      "rating": 7.9,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "O Ainda Aqui",
+          "duracao_seg": 191
+        },
+        {
+          "numero": 2,
+          "titulo": "Noite",
+          "duracao_seg": 145
+        },
+        {
+          "numero": 3,
+          "titulo": "O Quase Tudo",
+          "duracao_seg": 295
+        },
+        {
+          "numero": 4,
+          "titulo": "Sol (Pt. 3)",
+          "duracao_seg": 197
+        },
+        {
+          "numero": 5,
+          "titulo": "Vida",
+          "duracao_seg": 356
+        },
+        {
+          "numero": 6,
+          "titulo": "O Quase Tudo",
+          "duracao_seg": 146
+        }
+      ]
+    },
+    {
+      "id": "t000016",
+      "tipo": "album",
+      "titulo": "Harry's House",
+      "artista": "Harry Styles",
+      "ano": 2022,
+      "generos": [
+        "Pop",
+        "Rock"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "Deezer",
+        "YouTube Music"
+      ],
+      "data_adicionado": "23/05/2022",
+      "rating": 7.9,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Olhar (Pt. 3)",
+          "duracao_seg": 291
+        },
+        {
+          "numero": 2,
+          "titulo": "Beijo de Silêncio",
+          "duracao_seg": 166
+        },
+        {
+          "numero": 3,
+          "titulo": "Talvez Hoje (Pt. 2)",
+          "duracao_seg": 147
+        },
+        {
+          "numero": 4,
+          "titulo": "Verdade (Pt. 3)",
+          "duracao_seg": 238
+        },
+        {
+          "numero": 5,
+          "titulo": "Beijo (Pt. 3)",
+          "duracao_seg": 208
+        },
+        {
+          "numero": 6,
+          "titulo": "O Caminho",
+          "duracao_seg": 123
+        }
+      ]
+    },
+    {
+      "id": "t000017",
+      "tipo": "musica",
+      "titulo": "As It Was",
+      "artista": "Harry Styles",
+      "ano": 2022,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Apple Music",
+        "SoundCloud",
+        "Spotify"
+      ],
+      "data_adicionado": "23/12/2022",
+      "rating": 7.6,
+      "duracao_seg": 176,
+      "engajamento": {
+        "execucoes": 198938674,
+        "curtidas": 3936361
+      }
+    },
+    {
+      "id": "t000018",
+      "tipo": "musica",
+      "titulo": "Dynamite",
+      "artista": "BTS",
+      "ano": 2020,
+      "generos": [
+        "K-Pop",
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Apple Music",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2020-02-02",
+      "rating": 8.5,
+      "duracao_seg": 297,
+      "engajamento": {
+        "execucoes": 187064571,
+        "curtidas": 1371334
+      }
+    },
+    {
+      "id": "t000019",
+      "tipo": "musica",
+      "titulo": "Butter",
+      "artista": "BTS",
+      "ano": 2021,
+      "generos": [
+        "K-Pop"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "SoundCloud",
+        "Tidal"
+      ],
+      "data_adicionado": "15/04/2026",
+      "rating": 8.1,
+      "duracao_seg": 192,
+      "engajamento": {
+        "execucoes": 74664934,
+        "curtidas": 1817976
+      }
+    },
+    {
+      "id": "t000020",
+      "tipo": "album",
+      "titulo": "MAP OF THE SOUL: 7",
+      "artista": "BTS",
+      "ano": 2020,
+      "generos": [
+        "K-Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer",
+        "Tidal"
+      ],
+      "data_adicionado": "2020-01-22",
+      "rating": 8.6,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Amor",
+          "duracao_seg": 301
+        },
+        {
+          "numero": 2,
+          "titulo": "O Olhar",
+          "duracao_seg": 288
+        },
+        {
+          "numero": 3,
+          "titulo": "O Talvez Hoje",
+          "duracao_seg": 247
+        },
+        {
+          "numero": 4,
+          "titulo": "Verdade de Promessa",
+          "duracao_seg": 352
+        },
+        {
+          "numero": 5,
+          "titulo": "Fogo",
+          "duracao_seg": 237
+        },
+        {
+          "numero": 6,
+          "titulo": "Lua de Para Sempre",
+          "duracao_seg": 241
+        },
+        {
+          "numero": 7,
+          "titulo": "Vento de Noite",
+          "duracao_seg": 115
+        },
+        {
+          "numero": 8,
+          "titulo": "Beijo",
+          "duracao_seg": 109
+        },
+        {
+          "numero": 9,
+          "titulo": "O Amor",
+          "duracao_seg": 332
+        },
+        {
+          "numero": 10,
+          "titulo": "Promessa (Pt. 2)",
+          "duracao_seg": 229
+        },
+        {
+          "numero": 11,
+          "titulo": "Estrela (Pt. 3)",
+          "duracao_seg": 168
+        },
+        {
+          "numero": 12,
+          "titulo": "Despedida",
+          "duracao_seg": 262
+        },
+        {
+          "numero": 13,
+          "titulo": "Dança",
+          "duracao_seg": 91
+        },
+        {
+          "numero": 14,
+          "titulo": "Voz de Para Sempre",
+          "duracao_seg": 125
+        }
+      ]
+    },
+    {
+      "id": "t000021",
+      "tipo": "musica",
+      "titulo": "Spring Day",
+      "artista": "BTS",
+      "ano": 2017,
+      "generos": [
+        "K-Pop"
+      ],
+      "plataformas": [
+        "Deezer",
+        "SoundCloud",
+        "Spotify",
+        "Tidal"
+      ],
+      "data_adicionado": "05/06/2024",
+      "rating": 9.1,
+      "duracao_seg": 252,
+      "engajamento": {
+        "execucoes": 121368867,
+        "curtidas": 953998
+      }
+    },
+    {
+      "id": "t000022",
+      "tipo": "album",
+      "titulo": "(What's the Story) Morning Glory?",
+      "artista": "Oasis",
+      "ano": 1995,
+      "generos": [
+        "Rock",
+        "Britpop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "SoundCloud"
+      ],
+      "data_adicionado": "15/06/2019",
+      "rating": 8.7,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "O Verdade",
+          "duracao_seg": null
+        },
+        {
+          "numero": 2,
+          "titulo": "Sol (Pt. 2)",
+          "duracao_seg": 291
+        },
+        {
+          "numero": 3,
+          "titulo": "Verdade de Silêncio",
+          "duracao_seg": 333
+        },
+        {
+          "numero": 4,
+          "titulo": "Quase Tudo (Pt. 2)",
+          "duracao_seg": 319
+        },
+        {
+          "numero": 5,
+          "titulo": "O Coração",
+          "duracao_seg": 352
+        },
+        {
+          "numero": 6,
+          "titulo": "Despedida",
+          "duracao_seg": 252
+        },
+        {
+          "numero": 7,
+          "titulo": "Mar de Espelho",
+          "duracao_seg": 160
+        },
+        {
+          "numero": 8,
+          "titulo": "A Ainda Aqui",
+          "duracao_seg": 332
+        },
+        {
+          "numero": 9,
+          "titulo": "Saudade (Pt. 3)",
+          "duracao_seg": 289
+        },
+        {
+          "numero": 10,
+          "titulo": "Sonho",
+          "duracao_seg": 156
+        },
+        {
+          "numero": 11,
+          "titulo": "Vento de Beijo",
+          "duracao_seg": 138
+        },
+        {
+          "numero": 12,
+          "titulo": "O Caminho",
+          "duracao_seg": 146
+        },
+        {
+          "numero": 13,
+          "titulo": "O Vento",
+          "duracao_seg": 127
+        },
+        {
+          "numero": 14,
+          "titulo": "Espelho (Pt. 2)",
+          "duracao_seg": 186
+        }
+      ]
+    },
+    {
+      "id": "t000023",
+      "tipo": "musica",
+      "titulo": "Wonderwall",
+      "artista": "Oasis",
+      "ano": 1995,
+      "generos": [
+        "Rock"
+      ],
+      "plataformas": [
+        "SoundCloud",
+        "Spotify",
+        "YouTube Music"
+      ],
+      "data_adicionado": "30/12/2025",
+      "rating": 9.8,
+      "duracao_seg": 208,
+      "engajamento": {
+        "execucoes": 119237616,
+        "curtidas": 2316295
+      }
+    },
+    {
+      "id": "t000024",
+      "tipo": "musica",
+      "titulo": "Don't Look Back in Anger",
+      "artista": "Oasis",
+      "ano": 1995,
+      "generos": [
+        "Rock"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "SoundCloud",
+        "Spotify"
+      ],
+      "data_adicionado": "27/10/2019",
+      "rating": 7.9,
+      "duracao_seg": 188,
+      "engajamento": {
+        "execucoes": 165841471,
+        "curtidas": 4413868
+      }
+    },
+    {
+      "id": "t000025",
+      "tipo": "album",
+      "titulo": "Transpiração Contínua Prolongada",
+      "artista": "Charlie Brown Jr.",
+      "ano": 1997,
+      "generos": [
+        "Rock",
+        "Hardcore"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer"
+      ],
+      "data_adicionado": "14/05/2019",
+      "rating": 7.6,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "O Liberdade",
+          "duracao_seg": 143
+        },
+        {
+          "numero": 2,
+          "titulo": "Olhar (Pt. 3)",
+          "duracao_seg": 310
+        },
+        {
+          "numero": 3,
+          "titulo": "Liberdade de Sol",
+          "duracao_seg": 349
+        },
+        {
+          "numero": 4,
+          "titulo": "O Tempo",
+          "duracao_seg": null
+        },
+        {
+          "numero": 5,
+          "titulo": "Silêncio de Despedida",
+          "duracao_seg": 107
+        },
+        {
+          "numero": 6,
+          "titulo": "Vida",
+          "duracao_seg": 117
+        },
+        {
+          "numero": 7,
+          "titulo": "Amor (Pt. 2)",
+          "duracao_seg": 288
+        }
+      ]
+    },
+    {
+      "id": "t000026",
+      "tipo": "musica",
+      "titulo": "Só os Loucos Sabem",
+      "artista": "Charlie Brown Jr.",
+      "ano": 2005,
+      "generos": [
+        "Rock",
+        "MPB"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer",
+        "Spotify",
+        "Tidal"
+      ],
+      "data_adicionado": "29/11/2025",
+      "rating": 8.1,
+      "duracao_seg": 183,
+      "engajamento": {
+        "execucoes": 39116729,
+        "curtidas": 1747243
+      }
+    },
+    {
+      "id": "t000027",
+      "tipo": "musica",
+      "titulo": "Não Viva em Vão",
+      "artista": "Charlie Brown Jr.",
+      "ano": 2002,
+      "generos": [
+        "Rock"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Apple Music",
+        "Deezer",
+        "Spotify"
+      ],
+      "data_adicionado": "2020-02-06",
+      "rating": 8.5,
+      "duracao_seg": 211,
+      "engajamento": {
+        "execucoes": 122240907,
+        "curtidas": 291234
+      }
+    },
+    {
+      "id": "t000028",
+      "tipo": "musica",
+      "titulo": "Vagalumes",
+      "artista": "Charlie Brown Jr.",
+      "ano": 2007,
+      "generos": [
+        "Rock"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "YouTube Music"
+      ],
+      "data_adicionado": "23/04/2025",
+      "rating": 8.2,
+      "duracao_seg": 247,
+      "engajamento": {
+        "execucoes": 4085923,
+        "curtidas": 860674
+      }
+    },
+    {
+      "id": "t000029",
+      "tipo": "album",
+      "titulo": "White Pony",
+      "artista": "Deftones",
+      "ano": 2000,
+      "generos": [
+        "Alternative Metal",
+        "Rock"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "SoundCloud",
+        "Spotify"
+      ],
+      "data_adicionado": "27/12/2020",
+      "rating": 8.0,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "O Para Sempre",
+          "duracao_seg": 195
+        },
+        {
+          "numero": 2,
+          "titulo": "Espelho",
+          "duracao_seg": 295
+        },
+        {
+          "numero": 3,
+          "titulo": "Quase Tudo de Ainda Aqui",
+          "duracao_seg": 219
+        },
+        {
+          "numero": 4,
+          "titulo": "Talvez Hoje de Beijo",
+          "duracao_seg": 236
+        },
+        {
+          "numero": 5,
+          "titulo": "Sol",
+          "duracao_seg": 230
+        },
+        {
+          "numero": 6,
+          "titulo": "A Promessa",
+          "duracao_seg": 155
+        },
+        {
+          "numero": 7,
+          "titulo": "A Promessa",
+          "duracao_seg": 193
+        },
+        {
+          "numero": 8,
+          "titulo": "O Lua",
+          "duracao_seg": 225
+        },
+        {
+          "numero": 9,
+          "titulo": "Amor",
+          "duracao_seg": 329
+        },
+        {
+          "numero": 10,
+          "titulo": "O Silêncio",
+          "duracao_seg": 297
+        },
+        {
+          "numero": 11,
+          "titulo": "A Coração",
+          "duracao_seg": 205
+        }
+      ]
+    },
+    {
+      "id": "t000030",
+      "tipo": "album",
+      "titulo": "Diamond Eyes",
+      "artista": "Deftones",
+      "ano": 2010,
+      "generos": [
+        "Alternative Metal"
+      ],
+      "plataformas": [
+        "Deezer",
+        "SoundCloud",
+        "Spotify"
+      ],
+      "data_adicionado": "2023-12-24",
+      "rating": 8.2,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "O Talvez Hoje",
+          "duracao_seg": 196
+        },
+        {
+          "numero": 2,
+          "titulo": "Fogo (Pt. 3)",
+          "duracao_seg": 183
+        },
+        {
+          "numero": 3,
+          "titulo": "Olhar de Ainda Aqui",
+          "duracao_seg": 279
+        },
+        {
+          "numero": 4,
+          "titulo": "O Tempo",
+          "duracao_seg": 290
+        },
+        {
+          "numero": 5,
+          "titulo": "Dança (Pt. 2)",
+          "duracao_seg": 93
+        },
+        {
+          "numero": 6,
+          "titulo": "A Vento",
+          "duracao_seg": 335
+        },
+        {
+          "numero": 7,
+          "titulo": "Fogo",
+          "duracao_seg": 194
+        },
+        {
+          "numero": 8,
+          "titulo": "Vento",
+          "duracao_seg": 230
+        }
+      ]
+    },
+    {
+      "id": "t000031",
+      "tipo": "musica",
+      "titulo": "Change (In the House of Flies)",
+      "artista": "Deftones",
+      "ano": 2000,
+      "generos": [
+        "Alternative Metal"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Spotify",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "03/02/2024",
+      "rating": 9.3,
+      "duracao_seg": 256,
+      "engajamento": {
+        "execucoes": "186,479,622",
+        "curtidas": 2837157
+      }
+    },
+    {
+      "id": "t000032",
+      "tipo": "musica",
+      "titulo": "Digital Bath",
+      "artista": "Deftones",
+      "ano": 2000,
+      "generos": [
+        "Alternative Metal"
+      ],
+      "plataformas": [
+        "Deezer",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2023-05-24",
+      "rating": 8.6,
+      "duracao_seg": 237,
+      "engajamento": {
+        "execucoes": 94339458,
+        "curtidas": 2610842
+      }
+    },
+    {
+      "id": "t000033",
+      "tipo": "musica",
+      "titulo": "Espresso",
+      "artista": "Sabrina Carpenter",
+      "ano": 2024,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "SoundCloud",
+        "Tidal"
+      ],
+      "data_adicionado": "22/05/2023",
+      "rating": 9.8,
+      "duracao_seg": 245,
+      "engajamento": {
+        "execucoes": 45384421,
+        "curtidas": 2464690
+      }
+    },
+    {
+      "id": "t000034",
+      "tipo": "musica",
+      "titulo": "Please Please Please",
+      "artista": "Sabrina Carpenter",
+      "ano": 2024,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer",
+        "SoundCloud",
+        "Tidal"
+      ],
+      "data_adicionado": "2021-12-12",
+      "rating": 9.8,
+      "duracao_seg": 261,
+      "engajamento": {
+        "execucoes": "164,055,205",
+        "curtidas": 3443546
+      }
+    },
+    {
+      "id": "t000035",
+      "tipo": "musica",
+      "titulo": "Good Luck, Babe!",
+      "artista": "Chappell Roan",
+      "ano": 2024,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "YouTube Music"
+      ],
+      "data_adicionado": "26/10/2020",
+      "rating": 7.6,
+      "duracao_seg": 210,
+      "engajamento": {
+        "execucoes": 48558244,
+        "curtidas": 880240
+      }
+    },
+    {
+      "id": "t000036",
+      "tipo": "musica",
+      "titulo": "Birds of a Feather",
+      "artista": "Billie Eilish",
+      "ano": 2024,
+      "generos": [
+        "Pop"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "Deezer",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2023-06-13",
+      "rating": 8.7,
+      "duracao_seg": 320,
+      "engajamento": {
+        "execucoes": 2115054,
+        "curtidas": 3684065
+      }
+    },
+    {
+      "id": "t000037",
+      "tipo": "musica",
+      "titulo": "Too Sweet",
+      "artista": "Hozier",
+      "ano": 2024,
+      "generos": [
+        "Indie",
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Spotify",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "08/01/2025",
+      "rating": 8.7,
+      "duracao_seg": 179,
+      "engajamento": {
+        "execucoes": 52529182,
+        "curtidas": 1847472
+      }
+    },
+    {
+      "id": "t000038",
+      "tipo": "album",
+      "titulo": "Cowboy Carter",
+      "artista": "Beyoncé",
+      "ano": 2024,
+      "generos": [
+        "Country",
+        "Pop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer",
+        "Spotify",
+        "Tidal"
+      ],
+      "data_adicionado": "2023-05-19",
+      "rating": 9.4,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "A Olhar",
+          "duracao_seg": 251
+        },
+        {
+          "numero": 2,
+          "titulo": "A Amor",
+          "duracao_seg": 202
+        },
+        {
+          "numero": 3,
+          "titulo": "Estrela",
+          "duracao_seg": 271
+        },
+        {
+          "numero": 4,
+          "titulo": "O Fogo",
+          "duracao_seg": 152
+        },
+        {
+          "numero": 5,
+          "titulo": "A Despedida",
+          "duracao_seg": 123
+        },
+        {
+          "numero": 6,
+          "titulo": "Vida de Chuva",
+          "duracao_seg": 147
+        }
+      ]
+    },
+    {
+      "id": "t000039",
+      "tipo": "musica",
+      "titulo": "A Bar Song (Tipsy)",
+      "artista": "Shaboozey",
+      "ano": 2024,
+      "generos": [
+        "Country"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "Deezer",
+        "YouTube Music"
+      ],
+      "data_adicionado": "20/02/2023",
+      "rating": 7.6,
+      "duracao_seg": 160,
+      "engajamento": {
+        "execucoes": "170,456,405",
+        "curtidas": 2774847
+      }
+    },
+    {
+      "id": "t000040",
+      "tipo": "album",
+      "titulo": "BRAT",
+      "artista": "Charli XCX",
+      "ano": 2024,
+      "generos": [
+        "Pop",
+        "Electronic"
+      ],
+      "plataformas": [
+        "Deezer",
+        "Spotify",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "05/05/2024",
+      "rating": 9.5,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Silêncio",
+          "duracao_seg": 298
+        },
+        {
+          "numero": 2,
+          "titulo": "Verdade (Pt. 2)",
+          "duracao_seg": 156
+        },
+        {
+          "numero": 3,
+          "titulo": "O Coração",
+          "duracao_seg": 279
+        },
+        {
+          "numero": 4,
+          "titulo": "O Talvez Hoje",
+          "duracao_seg": 149
+        },
+        {
+          "numero": 5,
+          "titulo": "Noite de Liberdade",
+          "duracao_seg": 99
+        },
+        {
+          "numero": 6,
+          "titulo": "Chuva",
+          "duracao_seg": 253
+        },
+        {
+          "numero": 7,
+          "titulo": "Sol",
+          "duracao_seg": 226
+        },
+        {
+          "numero": 8,
+          "titulo": "O Espelho",
+          "duracao_seg": 178
+        },
+        {
+          "numero": 9,
+          "titulo": "Amor",
+          "duracao_seg": 291
+        },
+        {
+          "numero": 10,
+          "titulo": "Ainda Aqui",
+          "duracao_seg": 336
+        },
+        {
+          "numero": 11,
+          "titulo": "Vento",
+          "duracao_seg": 233
+        },
+        {
+          "numero": 12,
+          "titulo": "A Lua",
+          "duracao_seg": 119
+        }
+      ]
+    },
+    {
+      "id": "t000041",
+      "tipo": "album",
+      "titulo": "CHROMAKOPIA",
+      "artista": "Tyler, the Creator",
+      "ano": 2024,
+      "generos": [
+        "Hip-Hop",
+        "R&B"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "SoundCloud",
+        "Spotify"
+      ],
+      "data_adicionado": "2023-12-02",
+      "rating": 8.5,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Dança",
+          "duracao_seg": 311
+        },
+        {
+          "numero": 2,
+          "titulo": "Liberdade (Pt. 2)",
+          "duracao_seg": 337
+        },
+        {
+          "numero": 3,
+          "titulo": "Silêncio de Mar",
+          "duracao_seg": 283
+        },
+        {
+          "numero": 4,
+          "titulo": "A Despedida",
+          "duracao_seg": 107
+        },
+        {
+          "numero": 5,
+          "titulo": "Mar de Estrela",
+          "duracao_seg": 341
+        },
+        {
+          "numero": 6,
+          "titulo": "A Promessa",
+          "duracao_seg": 242
+        },
+        {
+          "numero": 7,
+          "titulo": "Liberdade (Pt. 2)",
+          "duracao_seg": 123
+        },
+        {
+          "numero": 8,
+          "titulo": "Tempo (Pt. 3)",
+          "duracao_seg": 185
+        },
+        {
+          "numero": 9,
+          "titulo": "Vida (Pt. 2)",
+          "duracao_seg": 308
+        }
+      ]
+    },
+    {
+      "id": "t000042",
+      "tipo": "musica",
+      "titulo": "Lua de Para Sempre",
+      "artista": "Maroon 5",
+      "ano": 1997,
+      "generos": [
+        "Soul",
+        "Funk"
+      ],
+      "plataformas": [
+        "Tidal"
+      ],
+      "data_adicionado": "2024-01-11",
+      "duracao_seg": 288,
+      "engajamento": {
+        "execucoes": 40301444,
+        "curtidas": 35474129
+      }
+    },
+    {
+      "id": "t000043",
+      "tipo": "musica",
+      "titulo": "Estrela",
+      "artista": "Caetano Veloso",
+      "ano": 2008,
+      "generos": [
+        "Trap"
+      ],
+      "plataformas": [
+        "Spotify"
+      ],
+      "data_adicionado": "2019-01-07",
+      "duracao_seg": 304,
+      "engajamento": {
+        "execucoes": 4109105,
+        "curtidas": 492747
+      }
+    },
+    {
+      "id": "t000044",
+      "tipo": "musica",
+      "titulo": "O Ainda Aqui",
+      "artista": "Tim Maia",
+      "ano": 2015,
+      "generos": [
+        "Hip-Hop",
+        "Funk",
+        "Indie"
+      ],
+      "plataformas": [
+        "Tidal"
+      ],
+      "data_adicionado": "2025-11-02",
+      "rating": 8.9,
+      "duracao_seg": 298,
+      "engajamento": {
+        "execucoes": "49,285,620",
+        "curtidas": 43629976
+      }
+    },
+    {
+      "id": "t000045",
+      "tipo": "musica",
+      "titulo": "Caminho",
+      "artista": "Tame Impala",
+      "ano": 2003,
+      "generos": [
+        "Soul",
+        "MPB"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "SoundCloud"
+      ],
+      "data_adicionado": "16/12/2023",
+      "rating": 9.9,
+      "duracao_seg": 202,
+      "engajamento": {
+        "execucoes": 9225096,
+        "curtidas": 7775425
+      }
+    },
+    {
+      "id": "t000046",
+      "tipo": "musica",
+      "titulo": "Espelho de Espelho",
+      "artista": "Emicida",
+      "ano": 2013,
+      "generos": "Rock",
+      "plataformas": [
+        "Amazon Music"
+      ],
+      "data_adicionado": "21/12/2022",
+      "rating": 3.6,
+      "duracao_seg": 306,
+      "engajamento": {
+        "execucoes": "28,033,399",
+        "curtidas": 21467126
+      }
+    },
+    {
+      "id": "t000047",
+      "tipo": "musica",
+      "titulo": "Despedida de Despedida",
+      "artista": "Ludmilla",
+      "ano": 2011,
+      "generos": "Rock",
+      "plataformas": [
+        "Deezer",
+        "SoundCloud",
+        "Spotify",
+        "YouTube Music"
+      ],
+      "data_adicionado": "2019-02-14",
+      "rating": 7.1,
+      "duracao_seg": 178,
+      "engajamento": {
+        "execucoes": 44352812,
+        "curtidas": 35242889
+      }
+    },
+    {
+      "id": "t000048",
+      "tipo": "musica",
+      "titulo": "O Mar",
+      "artista": "Mac Miller",
+      "ano": 2001,
+      "generos": [
+        "Rock"
+      ],
+      "plataformas": [
+        "Apple Music",
+        "Deezer",
+        "SoundCloud",
+        "Spotify"
+      ],
+      "data_adicionado": "18/08/2020",
+      "rating": 4.2,
+      "duracao_seg": 296,
+      "engajamento": {
+        "execucoes": 30450513,
+        "curtidas": 10023591
+      }
+    },
+    {
+      "id": "t000049",
+      "tipo": "musica",
+      "titulo": "Verdade",
+      "artista": "Skank",
+      "ano": 1998,
+      "generos": [
+        "Sertanejo",
+        "Forró"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer",
+        "Spotify",
+        "Tidal"
+      ],
+      "data_adicionado": "01/02/2021",
+      "rating": 6.7,
+      "duracao_seg": 127,
+      "engajamento": {
+        "execucoes": "30,676,429",
+        "curtidas": 23779521
+      }
+    },
+    {
+      "id": "t000050",
+      "tipo": "musica",
+      "titulo": "O Para Sempre",
+      "artista": "Arctic Monkeys",
+      "ano": 2026,
+      "generos": [
+        "Indie",
+        [
+          "Sub-B",
+          "Sub-A"
+        ],
+        "K-Pop"
+      ],
+      "plataformas": [
+        "Spotify"
+      ],
+      "data_adicionado": "05/10/2021",
+      "rating": 5.6,
+      "duracao_seg": 110,
+      "engajamento": {
+        "execucoes": 7859786,
+        "curtidas": 7164113
+      }
+    },
+    {
+      "id": "t000051",
+      "tipo": "album",
+      "titulo": "Vento de Amor",
+      "artista": "Phoebe Bridgers",
+      "ano": 2012,
+      "generos": "Soul",
+      "plataformas": [
+        "Deezer",
+        "Spotify",
+        "Tidal"
+      ],
+      "data_adicionado": "2025-12-04",
+      "rating": 6.5,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "A Lua",
+          "duracao_seg": 306
+        },
+        {
+          "numero": 2,
+          "titulo": "Coração de Verdade",
+          "duracao_seg": 129
+        },
+        {
+          "numero": 3,
+          "titulo": "Liberdade (Pt. 3)",
+          "duracao_seg": 311
+        },
+        {
+          "numero": 4,
+          "titulo": "Memória",
+          "duracao_seg": 347
+        },
+        {
+          "numero": 5,
+          "titulo": "Memória",
+          "duracao_seg": 318
+        },
+        {
+          "numero": 6,
+          "titulo": "O Estrela",
+          "duracao_seg": 272
+        },
+        {
+          "numero": 7,
+          "titulo": "O Voz",
+          "duracao_seg": 285
+        }
+      ]
+    },
+    {
+      "id": "t000052",
+      "tipo": "musica",
+      "titulo": "O Vida",
+      "artista": "Drake",
+      "ano": 2002,
+      "generos": [
+        "K-Pop",
+        [
+          "Sub-B",
+          "Sub-A"
+        ],
+        "Soul",
+        "Trap"
+      ],
+      "plataformas": [
+        "Amazon Music"
+      ],
+      "data_adicionado": "29/04/2022",
+      "rating": 5.9,
+      "duracao_seg": 288,
+      "engajamento": {
+        "execucoes": 14601075,
+        "curtidas": 4230542
+      }
+    },
+    {
+      "id": "t000053",
+      "tipo": "musica",
+      "titulo": "Promessa",
+      "artista": "Luísa Sonza",
+      "ano": 1997,
+      "generos": "Hip-Hop",
+      "plataformas": [
+        "Amazon Music",
+        "Spotify",
+        "Tidal",
+        "YouTube Music"
+      ],
+      "data_adicionado": "28/04/2023",
+      "rating": 8.9,
+      "duracao_seg": 135,
+      "engajamento": {
+        "execucoes": 27563113,
+        "curtidas": 3288081
+      }
+    },
+    {
+      "id": "t000054",
+      "tipo": "musica",
+      "titulo": "Coração",
+      "artista": "Doja Cat",
+      "ano": 2003,
+      "generos": [
+        "Sertanejo",
+        "Pop"
+      ],
+      "plataformas": [
+        "Deezer"
+      ],
+      "data_adicionado": "06/07/2019",
+      "rating": 1.6,
+      "duracao_seg": 302,
+      "engajamento": {
+        "execucoes": 28122390,
+        "curtidas": 5851163
+      }
+    },
+    {
+      "id": "t000055",
+      "tipo": "musica",
+      "titulo": "O Voz",
+      "artista": "Racionais MC's",
+      "ano": 2010,
+      "generos": [
+        "Soul",
+        "Hip-Hop"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Deezer",
+        "Spotify",
+        "YouTube Music"
+      ],
+      "data_adicionado": "15/02/2024",
+      "rating": 7.8,
+      "duracao_seg": 321,
+      "engajamento": {
+        "execucoes": 17030457,
+        "curtidas": 12987886
+      }
+    },
+    {
+      "id": "t000056",
+      "tipo": "musica",
+      "titulo": "Olhar (Pt. 3)",
+      "artista": "boygenius",
+      "ano": 2019,
+      "generos": [
+        "Reggae",
+        "Soul",
+        "Sertanejo"
+      ],
+      "plataformas": [
+        "Deezer"
+      ],
+      "data_adicionado": "07/09/2024",
+      "rating": 9.9,
+      "duracao_seg": 148,
+      "engajamento": {
+        "execucoes": 35235930,
+        "curtidas": 2261063
+      }
+    },
+    {
+      "id": "t000057",
+      "tipo": "album",
+      "titulo": "Verdade (Pt. 2)",
+      "artista": "Racionais MC's",
+      "ano": 2012,
+      "generos": [
+        "Funk",
+        "Forró"
+      ],
+      "plataformas": [
+        "Amazon Music",
+        "Apple Music",
+        "SoundCloud"
+      ],
+      "data_adicionado": "2019-02-02",
+      "rating": 8.5,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "Verdade",
+          "duracao_seg": 151
+        },
+        {
+          "numero": 2,
+          "titulo": "O Eternidade",
+          "duracao_seg": 123
+        },
+        {
+          "numero": 3,
+          "titulo": "A Beijo",
+          "duracao_seg": 227
+        },
+        {
+          "numero": 4,
+          "titulo": "A Amor",
+          "duracao_seg": 178
+        },
+        {
+          "numero": 5,
+          "titulo": "O Quase Tudo",
+          "duracao_seg": 98
+        },
+        {
+          "numero": 6,
+          "titulo": "Quase Tudo",
+          "duracao_seg": 95
+        },
+        {
+          "numero": 7,
+          "titulo": "Quase Tudo de Fogo",
+          "duracao_seg": 152
+        }
+      ]
+    },
+    {
+      "id": "t000058",
+      "tipo": "album",
+      "titulo": "Vento",
+      "artista": "MC Daniel",
+      "ano": 1998,
+      "generos": [
+        "Forró",
+        [
+          "Sub-B",
+          "Sub-A"
+        ],
+        "Samba",
+        "MPB"
+      ],
+      "plataformas": [
+        "Deezer",
+        "Tidal"
+      ],
+      "data_adicionado": "2025-06-18",
+      "rating": 7.8,
+      "faixas": [
+        {
+          "numero": 1,
+          "titulo": "O Lua",
+          "duracao_seg": 289
+        },
+        {
+          "numero": 2,
+          "titulo": "A Promessa",
+          "duracao_seg": 121
+        },
+        {
+          "numero": 3,
+          "titulo": "O Promessa",
+          "duracao_seg": 239
+        },
+        {
+          "numero": 4,
+          "titulo": "O Vento",
+          "duracao_seg": 133
+        },
+        {
+          "numero": 5,
+          "titulo": "Verdade (Pt. 3)",
+          "duracao_seg": 274
+        },
+        {
+          "numero": 6,
+          "titulo": "Ainda Aqui de Talvez Hoje",
+          "duracao_seg": 181
+        },
+        {
+          "numero": 7,
+          "titulo": "A Noite",
+          "duracao_seg": 114
+        },
+        {
+          "numero": 8,
+          "titulo": "Promessa (Pt. 3)",
+          "duracao_seg": 309
+        },
+        {
+          "numero": 9,
+          "titulo": "O Tempo",
+          "duracao_seg": 168
+        },
+        {
+          "numero": 10,
+          "titulo": "A Estrela",
+          "duracao_seg": 334
+        },
+        {
+          "numero": 11,
+          "titulo": "A Coração",
+          "duracao_seg": 219
+        }
+      ]
+    },
+    {
+      "id": "t000059",
+      "tipo": "musica",
+      "titulo": "Noite",
+      "artista": "Frank Ocean",
+      "ano": 2025,
+      "generos": [
+        "Eletrônica"
+      ],
+      "plataformas": [
+        "SoundCloud"
+      ],
+      "data_adicionado": "23/01/2025",
+      "rating": 5.6,
+      "duracao_seg": 94,
+      "engajamento": {
+        "execucoes": 3546175,
+        "curtidas": 995045
+      }
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "u01",
+      "nome": "Ayres",
+      "playlist": [
+        "t000009",
+        "t000010",
+        "t000011",
+        "t000012",
+        "t000013",
+        "t000014",
+        "t000015",
+        "t000016",
+        "t000017",
+        "t000004",
+        "t000048",
+        "t000001",
+        "t000052",
+        "t000053",
+        "t000050",
+        "t000046",
+        "t000047",
+        "t000027",
+        "t000044",
+        "t000037",
+        "t000040",
+        "t000054",
+        "t000051",
+        "t000021",
+        "t000020",
+        "t000039",
+        "t000056",
+        "t000005",
+        "t000057",
+        "t000059",
+        "t000042",
+        "t000019",
+        "t000007",
+        "t000043",
+        "t000000",
+        "t000018",
+        "t000049",
+        "t000002",
+        "t000024",
+        "t000006",
+        "t000055",
+        "t000038",
+        "t000031",
+        "t000032",
+        "t000025",
+        "t000041",
+        "t000058",
+        "t000034",
+        "t000028"
+      ]
+    },
+    {
+      "id": "u02",
+      "nome": "Sofia",
+      "playlist": [
+        "t000044",
+        "t000039",
+        "t000007",
+        "t000050",
+        "t000055",
+        "t000053",
+        "t000029",
+        "t000004",
+        "t000016",
+        "t000046",
+        "t000056",
+        "t000045",
+        "t000040",
+        "t000059",
+        "t000020",
+        "t000000",
+        "t000023",
+        "t000036",
+        "t000002",
+        "t000047",
+        "t000025",
+        "t000042",
+        "t000013",
+        "t000049",
+        "t000008",
+        "t000022",
+        "t000048",
+        "t000033",
+        "t000052",
+        "t000057",
+        "t000028",
+        "t000027",
+        "t000015",
+        "t000019",
+        "t000038",
+        "t000034",
+        "t000001",
+        "t000006",
+        "t000005",
+        "t000024",
+        "t000003",
+        "t000041",
+        "t000030",
+        "t000011"
+      ]
+    },
+    {
+      "id": "u03",
+      "nome": "Bea",
+      "playlist": [
+        "t000023",
+        "t000035",
+        "t000006",
+        "t000032",
+        "t000001",
+        "t000049",
+        "t000033",
+        "t000020",
+        "t000030",
+        "t000045",
+        "t000053",
+        "t000005",
+        "t000044",
+        "t000021",
+        "t000018",
+        "t000039",
+        "t000034",
+        "t000014",
+        "t000028",
+        "t000047",
+        "t000002",
+        "t000042",
+        "t000004",
+        "t000022",
+        "t000036",
+        "t000012",
+        "t000011",
+        "t000037",
+        "t000058",
+        "t000055",
+        "t000000",
+        "t000050",
+        "t000057",
+        "t000048",
+        "t000013",
+        "t000038",
+        "t000059",
+        "t000017",
+        "t000056",
+        "t000026",
+        "t000031"
+      ]
+    },
+    {
+      "id": "u04",
+      "nome": "Bia",
+      "playlist": [
+        "t000031",
+        "t000044",
+        "t000004",
+        "t000052",
+        "t000042",
+        "t000017",
+        "t000027",
+        "t000005",
+        "t000041"
+      ]
+    },
+    {
+      "id": "u05",
+      "nome": "Clara",
+      "playlist": [
+        "t000018",
+        "t000019",
+        "t000020",
+        "t000021",
+        "t000057",
+        "t000008",
+        "t000059",
+        "t000032",
+        "t000049",
+        "t000010",
+        "t000024",
+        "t000038",
+        "t000009",
+        "t000039",
+        "t000054",
+        "t000035",
+        "t000001",
+        "t000047",
+        "t000058",
+        "t000050",
+        "t000006",
+        "t000000",
+        "t000027",
+        "t000053",
+        "t000026",
+        "t000013",
+        "t000052",
+        "t000025",
+        "t000037",
+        "t000022",
+        "t000030",
+        "t000002",
+        "t000004",
+        "t000045",
+        "t000005",
+        "t000015",
+        "t000056",
+        "t000003",
+        "t000046",
+        "t000055",
+        "t000036",
+        "t000033",
+        "t000041",
+        "t000044"
+      ]
+    },
+    {
+      "id": "u06",
+      "nome": "Cecilia",
+      "playlist": [
+        "t000017",
+        "t000040",
+        "t000002",
+        "t000041",
+        "t000033",
+        "t000022",
+        "t000031",
+        "t000009"
+      ]
+    },
+    {
+      "id": "u07",
+      "nome": "Felipe",
+      "playlist": [
+        "t000018",
+        "t000019",
+        "t000020",
+        "t000021",
+        "t000046",
+        "t000058",
+        "t000016",
+        "t000013",
+        "t000055",
+        "t000042",
+        "t000043",
+        "t000026",
+        "t000037",
+        "t000025",
+        "t000010",
+        "t000024",
+        "t000033",
+        "t000051",
+        "t000029",
+        "t000052",
+        "t000011",
+        "t000041",
+        "t000039",
+        "t000035",
+        "t000009",
+        "t000015",
+        "t000040",
+        "t000002",
+        "t000032",
+        "t000059",
+        "t000017",
+        "t000056",
+        "t000047",
+        "t000053",
+        "t000044",
+        "t000054",
+        "t000014",
+        "t000045",
+        "t000023",
+        "t000036",
+        "t000005",
+        "t000027",
+        "t000022",
+        "t000008",
+        "t000000",
+        "t000030"
+      ]
+    },
+    {
+      "id": "u08",
+      "nome": "Eduardo",
+      "playlist": [
+        "t000029",
+        "t000030",
+        "t000031",
+        "t000032",
+        "t000028",
+        "t000038",
+        "t000014",
+        "t000012",
+        "t000046",
+        "t000009",
+        "t000043",
+        "t000023",
+        "t000013",
+        "t000025",
+        "t000020",
+        "t000019",
+        "t000000",
+        "t000022",
+        "t000002",
+        "t000016",
+        "t000056",
+        "t000049",
+        "t000003",
+        "t000055",
+        "t000034",
+        "t000053",
+        "t000026",
+        "t000006",
+        "t000040",
+        "t000041",
+        "t000024",
+        "t000059",
+        "t000010",
+        "t000021",
+        "t000035",
+        "t000058",
+        "t000027",
+        "t000045",
+        "t000057",
+        "t000015",
+        "t000044",
+        "t000037",
+        "t000036",
+        "t000007",
+        "t000008",
+        "t000042"
+      ]
+    },
+    {
+      "id": "u09",
+      "nome": "Guilherme",
+      "playlist": [
+        "t000018",
+        "t000041",
+        "t000034",
+        "t000027",
+        "t000059",
+        "t000036",
+        "t000040",
+        "t000020",
+        "t000057"
+      ]
+    },
+    {
+      "id": "u10",
+      "nome": "Harry",
+      "playlist": [
+        "t000023",
+        "t000022",
+        "t000028",
+        "t000020",
+        "t000051",
+        "t000039",
+        "t000010",
+        "t000037",
+        "t000058",
+        "t000014",
+        "t000005",
+        "t000025",
+        "t000002",
+        "t000008",
+        "t000032",
+        "t000036",
+        "t000001",
+        "t000043",
+        "t000031",
+        "t000057"
+      ]
+    },
+    {
+      "id": "u11",
+      "nome": "Joaquim",
+      "playlist": [
+        "t000014",
+        "t000027",
+        "t000045",
+        "t000026",
+        "t000024",
+        "t000034",
+        "t000013",
+        "t000009",
+        "t000007",
+        "t000035",
+        "t000022",
+        "t000047",
+        "t000059",
+        "t000044",
+        "t000032",
+        "t000020",
+        "t000011",
+        "t000055",
+        "t000004",
+        "t000028",
+        "t000000",
+        "t000042",
+        "t000037",
+        "t000031",
+        "t000006",
+        "t000046",
+        "t000021",
+        "t000015",
+        "t000054",
+        "t000018",
+        "t000053",
+        "t000049",
+        "t000030",
+        "t000002",
+        "t000001",
+        "t000038",
+        "t000029",
+        "t000008",
+        "t000033",
+        "t000050",
+        "t000056",
+        "t000025",
+        "t000017",
+        "t000036",
+        "t000003",
+        "t000048"
+      ]
+    },
+    {
+      "id": "u12",
+      "nome": "Kruta",
+      "playlist": [
+        "t000027",
+        "t000037",
+        "t000008",
+        "t000026",
+        "t000032",
+        "t000010",
+        "t000044",
+        "t000033",
+        "t000021",
+        "t000057",
+        "t000001",
+        "t000054",
+        "t000029",
+        "t000045",
+        "t000031",
+        "t000041"
+      ]
+    },
+    {
+      "id": "u13",
+      "nome": "Luigi",
+      "playlist": [
+        "t000051",
+        "t000013",
+        "t000059",
+        "t000016",
+        "t000029",
+        "t000008",
+        "t000037",
+        "t000053",
+        "t000056",
+        "t000049",
+        "t000009",
+        "t000040",
+        "t000022",
+        "t000055",
+        "t000050",
+        "t000031",
+        "t000025",
+        "t000005",
+        "t000026",
+        "t000006",
+        "t000035",
+        "t000041",
+        "t000027",
+        "t000023",
+        "t000036",
+        "t000043",
+        "t000047",
+        "t000000",
+        "t000034",
+        "t000004",
+        "t000039"
+      ]
+    },
+    {
+      "id": "u14",
+      "nome": "Matheus",
+      "playlist": [
+        "t000004",
+        "t000019",
+        "t000033",
+        "t000055",
+        "t000014",
+        "t000023",
+        "t000032",
+        "t000016",
+        "t000054",
+        "t000030",
+        "t000012",
+        "t000022"
+      ]
+    },
+    {
+      "id": "u15",
+      "nome": "Miguel",
+      "playlist": [
+        "t000046",
+        "t000023",
+        "t000017",
+        "t000003",
+        "t000002",
+        "t000056",
+        "t000051",
+        "t000030",
+        "t000037"
+      ]
+    },
+    {
+      "id": "u16",
+      "nome": "Mikael",
+      "playlist": [
+        "t000018",
+        "t000002",
+        "t000042",
+        "t000022",
+        "t000026",
+        "t000056",
+        "t000057",
+        "t000012",
+        "t000044",
+        "t000039",
+        "t000016",
+        "t000024",
+        "t000008"
+      ]
+    },
+    {
+      "id": "u17",
+      "nome": "Nicholas",
+      "playlist": [
+        "t000000",
+        "t000001",
+        "t000002",
+        "t000003",
+        "t000004",
+        "t000005",
+        "t000006",
+        "t000007",
+        "t000008",
+        "t000025",
+        "t000057",
+        "t000059",
+        "t000016",
+        "t000028"
+      ]
+    },
+    {
+      "id": "u18",
+      "nome": "Davi",
+      "playlist": [
+        "t000018",
+        "t000021",
+        "t000014",
+        "t000001",
+        "t000058",
+        "t000046",
+        "t000031",
+        "t000053",
+        "t000041",
+        "t000012",
+        "t000037",
+        "t000022",
+        "t000017",
+        "t000000",
+        "t000047",
+        "t000052",
+        "t000007",
+        "t000006",
+        "t000039",
+        "t000002"
+      ]
+    },
+    {
+      "id": "u19",
+      "nome": "Luiz",
+      "playlist": [
+        "t000013",
+        "t000004",
+        "t000017",
+        "t000034",
+        "t000039",
+        "t000018",
+        "t000030",
+        "t000058",
+        "t000043",
+        "t000033",
+        "t000027",
+        "t000023",
+        "t000021",
+        "t000032",
+        "t000051",
+        "t000059",
+        "t000005",
+        "t000028",
+        "t000036",
+        "t000054",
+        "t000025",
+        "t000042",
+        "t000040",
+        "t000047",
+        "t000009",
+        "t000037",
+        "t000029",
+        "t000053",
+        "t000045",
+        "t000010",
+        "t000024",
+        "t000020",
+        "t000008",
+        "t000016",
+        "t000001",
+        "t000035",
+        "t000007",
+        "t000038",
+        "t000046",
+        "t000026",
+        "t000057",
+        "t000031",
+        "t000002",
+        "t000000",
+        "t000056",
+        "t000014"
+      ]
+    },
+    {
+      "id": "u20",
+      "nome": "Nicole",
+      "playlist": [
+        "t000033",
+        "t000034",
+        "t000035",
+        "t000036",
+        "t000037",
+        "t000038",
+        "t000039",
+        "t000040",
+        "t000041",
+        "t000028",
+        "t000029",
+        "t000057"
+      ]
+    },
+    {
+      "id": "u21",
+      "nome": "Puca",
+      "playlist": [
+        "t000024",
+        "t000022",
+        "t000038",
+        "t000020",
+        "t000029",
+        "t000017",
+        "t000032",
+        "t000005",
+        "t000044",
+        "t000031",
+        "t000033",
+        "t000037",
+        "t000025",
+        "t000006",
+        "t000042",
+        "t000050",
+        "t000051",
+        "t000053",
+        "t000004",
+        "t000002",
+        "t000040",
+        "t000027",
+        "t000018",
+        "t000026",
+        "t000052",
+        "t000021",
+        "t000014",
+        "t000030",
+        "t000000",
+        "t000035",
+        "t000016",
+        "t000048",
+        "t000059",
+        "t000013",
+        "t000054"
+      ]
+    },
+    {
+      "id": "u22",
+      "nome": "Quintela",
+      "playlist": [
+        "t000021",
+        "t000032",
+        "t000054",
+        "t000013",
+        "t000041",
+        "t000040",
+        "t000024",
+        "t000055",
+        "t000049",
+        "t000029",
+        "t000039",
+        "t000050",
+        "t000034",
+        "t000012",
+        "t000009",
+        "t000059",
+        "t000026",
+        "t000008",
+        "t000011",
+        "t000000",
+        "t000035",
+        "t000053",
+        "t000023",
+        "t000016",
+        "t000037",
+        "t000051",
+        "t000052",
+        "t000005",
+        "t000057",
+        "t000015",
+        "t000047",
+        "t000014",
+        "t000030",
+        "t000019",
+        "t000048",
+        "t000058",
+        "t000028",
+        "t000031",
+        "t000038",
+        "t000027",
+        "t000043",
+        "t000056",
+        "t000033",
+        "t000044",
+        "t000002",
+        "t000020",
+        "t000001",
+        "t000046"
+      ]
+    },
+    {
+      "id": "u23",
+      "nome": "Uchoa",
+      "playlist": [
+        "t000000",
+        "t000001",
+        "t000002",
+        "t000003",
+        "t000022",
+        "t000023",
+        "t000024",
+        "t000014",
+        "t000032",
+        "t000035",
+        "t000052",
+        "t000053",
+        "t000048",
+        "t000037",
+        "t000030",
+        "t000025",
+        "t000017",
+        "t000058",
+        "t000054",
+        "t000016",
+        "t000042",
+        "t000059",
+        "t000021"
+      ]
+    },
+    {
+      "id": "u24",
+      "nome": "Ralf",
+      "playlist": [
+        "t000038",
+        "t000035",
+        "t000011",
+        "t000037",
+        "t000040",
+        "t000005",
+        "t000000",
+        "t000057",
+        "t000053",
+        "t000049",
+        "t000032",
+        "t000014",
+        "t000041",
+        "t000033",
+        "t000013",
+        "t000010",
+        "t000026",
+        "t000039",
+        "t000043",
+        "t000029",
+        "t000054",
+        "t000004",
+        "t000055",
+        "t000012",
+        "t000042",
+        "t000047",
+        "t000058",
+        "t000008",
+        "t000025",
+        "t000048",
+        "t000028",
+        "t000003",
+        "t000017",
+        "t000044",
+        "t000002",
+        "t000045",
+        "t000015",
+        "t000027",
+        "t000030",
+        "t000056",
+        "t000009"
+      ]
+    },
+    {
+      "id": "u25",
+      "nome": "Sergio",
+      "playlist": [
+        "t000017",
+        "t000000",
+        "t000032",
+        "t000047",
+        "t000027",
+        "t000050",
+        "t000056",
+        "t000008",
+        "t000024",
+        "t000009",
+        "t000030",
+        "t000053",
+        "t000058",
+        "t000011",
+        "t000048",
+        "t000039",
+        "t000016",
+        "t000005",
+        "t000007",
+        "t000055",
+        "t000045",
+        "t000028",
+        "t000026",
+        "t000052",
+        "t000035",
+        "t000041",
+        "t000019",
+        "t000044",
+        "t000057",
+        "t000020",
+        "t000010",
+        "t000021",
+        "t000022",
+        "t000023",
+        "t000042",
+        "t000034",
+        "t000001",
+        "t000037"
+      ]
+    },
+    {
+      "id": "u26",
+      "nome": "Daniel",
+      "playlist": [
+        "t000018",
+        "t000019",
+        "t000020",
+        "t000021",
+        "t000050",
+        "t000014",
+        "t000055",
+        "t000038",
+        "t000007",
+        "t000046",
+        "t000054",
+        "t000017",
+        "t000011",
+        "t000032",
+        "t000048",
+        "t000002",
+        "t000016",
+        "t000053",
+        "t000049",
+        "t000026"
+      ]
+    },
+    {
+      "id": "u27",
+      "nome": "Emyle",
+      "playlist": [
+        "t000051",
+        "t000016",
+        "t000012",
+        "t000014",
+        "t000006",
+        "t000042",
+        "t000004",
+        "t000019",
+        "t000059",
+        "t000020",
+        "t000009",
+        "t000049",
+        "t000010"
+      ]
+    },
+    {
+      "id": "u28",
+      "nome": "Luciana",
+      "playlist": [
+        "t000042",
+        "t000010",
+        "t000053",
+        "t000052",
+        "t000020",
+        "t000037",
+        "t000047",
+        "t000023",
+        "t000016",
+        "t000013",
+        "t000048",
+        "t000041",
+        "t000025",
+        "t000030",
+        "t000014",
+        "t000059",
+        "t000027",
+        "t000049",
+        "t000015",
+        "t000051",
+        "t000057",
+        "t000031",
+        "t000034"
+      ]
+    },
+    {
+      "id": "u29",
+      "nome": "Tiago",
+      "playlist": [
+        "t000046",
+        "t000042",
+        "t000047",
+        "t000040",
+        "t000025",
+        "t000056",
+        "t000044",
+        "t000004",
+        "t000017",
+        "t000045",
+        "t000029",
+        "t000043",
+        "t000000",
+        "t000050",
+        "t000027",
+        "t000015",
+        "t000053",
+        "t000048",
+        "t000051",
+        "t000038",
+        "t000005"
+      ]
+    },
+    {
+      "id": "u30",
+      "nome": "Marcus",
+      "playlist": [
+        "t000029",
+        "t000053",
+        "t000028",
+        "t000038",
+        "t000006",
+        "t000011",
+        "t000002",
+        "t000055",
+        "t000036"
+      ]
+    },
+    {
+      "id": "u31",
+      "nome": "Pierre",
+      "playlist": [
+        "t000043",
+        "t000025",
+        "t000006",
+        "t000052",
+        "t000050",
+        "t000058",
+        "t000021",
+        "t000055",
+        "t000001",
+        "t000020",
+        "t000048",
+        "t000034",
+        "t000036",
+        "t000030",
+        "t000038"
+      ]
+    },
+    {
+      "id": "u32",
+      "nome": "Cecilia de Tiago",
+      "playlist": [
+        "t000034",
+        "t000059",
+        "t000003",
+        "t000032",
+        "t000001",
+        "t000036",
+        "t000029",
+        "t000006",
+        "t000007",
+        "t000022",
+        "t000045",
+        "t000005",
+        "t000019",
+        "t000042",
+        "t000026",
+        "t000048",
+        "t000020",
+        "t000039"
+      ]
+    },
+    {
+      "id": "u33",
+      "nome": "João",
+      "playlist": [
+        "t000025",
+        "t000026",
+        "t000027",
+        "t000028",
+        "t000006",
+        "t000049",
+        "t000001",
+        "t000043",
+        "t000005",
+        "t000050",
+        "t000046",
+        "t000038",
+        "t000059",
+        "t000044",
+        "t000039",
+        "t000031",
+        "t000016",
+        "t000058",
+        "t000008",
+        "t000034",
+        "t000011",
+        "t000014",
+        "t000022",
+        "t000009"
+      ]
+    }
+  ]
+}
