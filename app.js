@@ -23,13 +23,23 @@ term.open(termEl);
 fitAddon.fit();
 window.addEventListener("resize", () => fitAddon.fit());
 
+// Mouse wheel sobre o container do terminal scrolla o buffer do xterm
+termEl.addEventListener("wheel", (e) => {
+  if (e.deltaY === 0) return;
+  const linhas = Math.sign(e.deltaY) * 3;
+  term.scrollLines(linhas);
+  e.preventDefault();
+}, { passive: false });
+
 function setStatus(text, kind = "loading") {
   statusLabelEl.textContent = text;
   statusEl.className = `status status--${kind}`;
 }
 
 async function fetchText(url) {
-  const r = await fetch(url);
+  // cache-bust pra evitar que o browser sirva catalogo.py/json antigos
+  const sep = url.includes("?") ? "&" : "?";
+  const r = await fetch(`${url}${sep}v=${Date.now()}`);
   if (!r.ok) throw new Error(`fetch ${url}: ${r.status}`);
   return await r.text();
 }
