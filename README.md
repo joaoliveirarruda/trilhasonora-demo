@@ -1,9 +1,10 @@
-# TrilhaFlix — demo
+# Trilha Sonora — demo
 
 **URL pública:** <https://joaoliveirarruda.github.io/trilhaflix-demo/>
 
-Demo navegável do mini-projeto TrilhaFlix do bloco Python Básico do Trilha.
-A página roda 100% no browser via [Pyodide](https://pyodide.org) e
+Demo navegável do mini-projeto de Python Básico do Trilha — um catálogo
+fictício de streaming musical com 60 conteúdos e 33 playlists. A página
+roda 100% no browser via [Pyodide](https://pyodide.org) e
 [xterm.js](https://xtermjs.org).
 
 ## Como funciona
