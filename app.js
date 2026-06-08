@@ -184,13 +184,14 @@ async function opConteudoNaPosicao(api) {
   const u = await lerUsuarioPorNome(api);
   if (!u) return;
   const tamanho = api.playlist_de(u.uid).length;
-  term.writeln(`Playlist de ${ANSI.green}${u.nome}${ANSI.reset} tem ${ANSI.green}${tamanho}${ANSI.reset} itens (posições 0 a ${tamanho - 1}).`);
-  const posStr = (await lerLinha("Posição (começando em 0): ")).trim();
-  const pos = parseInt(posStr, 10);
-  if (Number.isNaN(pos)) { term.writeln("Posição inválida."); return; }
-  const cid = api.conteudo_na_posicao(u.uid, pos);
+  term.writeln(`Playlist de ${ANSI.green}${u.nome}${ANSI.reset} tem ${ANSI.green}${tamanho}${ANSI.reset} itens (posições 1 a ${tamanho}).`);
+  const posStr = (await lerLinha("Posição: ")).trim();
+  const posHumano = parseInt(posStr, 10);
+  if (Number.isNaN(posHumano)) { term.writeln("Posição inválida."); return; }
+  // CLI é 1-based pra humano; o método é 0-based.
+  const cid = api.conteudo_na_posicao(u.uid, posHumano - 1);
   if (cid === null) term.writeln("Posição fora do range da playlist.");
-  else              term.writeln(`Posição ${pos} de ${ANSI.green}${u.nome}${ANSI.reset}: ${api.descricao_curta(cid)}`);
+  else              term.writeln(`Posição ${posHumano} de ${ANSI.green}${u.nome}${ANSI.reset}: ${api.descricao_curta(cid)}`);
 }
 
 async function opIntersecao(api) {
