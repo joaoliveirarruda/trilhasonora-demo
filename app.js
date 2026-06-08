@@ -121,6 +121,9 @@ function py(pyodide) {
     data_adicionado_de: (id) => call("data_adicionado_de", id),
     execucoes_de: (id) => call("execucoes_de", id),
     conteudos_do_genero: (g) => call("conteudos_do_genero", g),
+    enfileirar: (id) => call("enfileirar", id),
+    proximo: () => call("proximo"),
+    fila_atual: () => call("fila_atual"),
     descricao_curta: (id) => call("descricao_curta", id),
     nome_do_usuario: (uid) => call("nome_do_usuario", uid),
     tipo_de: (id) => call("tipo_de", id),
@@ -180,6 +183,8 @@ async function opVerPlaylist(api) {
 async function opConteudoNaPosicao(api) {
   const u = await lerUsuarioPorNome(api);
   if (!u) return;
+  const tamanho = api.playlist_de(u.uid).length;
+  term.writeln(`Playlist de ${ANSI.green}${u.nome}${ANSI.reset} tem ${ANSI.green}${tamanho}${ANSI.reset} itens (posições 0 a ${tamanho - 1}).`);
   const posStr = (await lerLinha("Posição (começando em 0): ")).trim();
   const pos = parseInt(posStr, 10);
   if (Number.isNaN(pos)) { term.writeln("Posição inválida."); return; }
@@ -248,6 +253,37 @@ async function opConteudosDoGenero(api) {
   if (ids.length > max) term.writeln(`  … e mais ${ids.length - max}.`);
 }
 
+async function opEnfileirar(api) {
+  const cid = (await lerLinha("ID do conteúdo pra enfileirar (ex.: t000000): ")).trim();
+  const ok = api.enfileirar(cid);
+  if (!ok) {
+    term.writeln(`${ANSI.red}Conteúdo "${cid}" não existe — nada foi enfileirado.${ANSI.reset}`);
+    return;
+  }
+  const tamanho = api.fila_atual().length;
+  term.writeln(`Enfileirado: ${ANSI.green}${api.descricao_curta(cid)}${ANSI.reset} (fila com ${tamanho} ${tamanho === 1 ? "item" : "itens"}).`);
+}
+
+async function opProximo(api) {
+  const cid = api.proximo();
+  if (cid === null) {
+    term.writeln("Fila vazia — nada pra tocar.");
+    return;
+  }
+  const restantes = api.fila_atual().length;
+  term.writeln(`Tocando: ${ANSI.greenB}${api.descricao_curta(cid)}${ANSI.reset}`);
+  term.writeln(`${ANSI.dim}Restam ${restantes} ${restantes === 1 ? "item" : "itens"} na fila.${ANSI.reset}`);
+}
+
+async function opFilaAtual(api) {
+  const ids = api.fila_atual();
+  if (ids.length === 0) { term.writeln("Fila vazia."); return; }
+  term.writeln(`Fila atual (${ANSI.green}${ids.length}${ANSI.reset} ${ids.length === 1 ? "item" : "itens"}, próximo primeiro):`);
+  for (let i = 0; i < ids.length; i++) {
+    term.writeln(`  ${(i + 1).toString().padStart(2)}. ${api.descricao_curta(ids[i])}`);
+  }
+}
+
 const MENU = [
   "1. Listar todos os usuários",
   "2. Ver playlist completa de um usuário",
@@ -255,6 +291,9 @@ const MENU = [
   "4. Interseção de playlists (N usuários)",
   "5. Dados de um conteúdo (rating, duração, gêneros, plataformas, data, execuções)",
   "6. Conteúdos de um gênero",
+  "7. Enfileirar conteúdo na fila de reprodução",
+  "8. Tocar próximo da fila",
+  "9. Ver fila atual",
 ];
 
 async function loopMenu(api) {
@@ -271,6 +310,9 @@ async function loopMenu(api) {
       else if (escolha === "4") await opIntersecao(api);
       else if (escolha === "5") await opDadosDoConteudo(api);
       else if (escolha === "6") await opConteudosDoGenero(api);
+      else if (escolha === "7") await opEnfileirar(api);
+      else if (escolha === "8") await opProximo(api);
+      else if (escolha === "9") await opFilaAtual(api);
       else                       term.writeln("Opção inválida.");
     } catch (err) {
       term.writeln(`${ANSI.red}Erro: ${err.message}${ANSI.reset}`);

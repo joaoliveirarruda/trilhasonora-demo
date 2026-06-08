@@ -3,6 +3,7 @@
 Usada pela demo pública. Casa 100% com as regras canônicas listadas
 no ENUNCIADO.md do projeto principal.
 """
+import collections
 import json
 
 
@@ -22,6 +23,8 @@ class Catalogo:
 
         self._usuario_por_id = {u["id"]: u for u in self._dados["usuarios"]}
         self._usuario_por_nome = {u["nome"]: u for u in self._dados["usuarios"]}
+
+        self._fila = collections.deque()
 
     # --- Métodos prescritos pelo ENUNCIADO ---
 
@@ -104,6 +107,20 @@ class Catalogo:
 
     def conteudos_do_genero(self, genero):
         return list(self._por_genero.get(genero, []))
+
+    # --- Fila de reprodução (estado mutável) ---
+
+    def enfileirar(self, conteudo_id):
+        if conteudo_id not in self._por_id:
+            return False
+        self._fila.append(conteudo_id)
+        return True
+
+    def proximo(self):
+        return self._fila.popleft() if self._fila else None
+
+    def fila_atual(self):
+        return list(self._fila)
 
     # --- Helpers de exibição usados pela CLI ---
 
