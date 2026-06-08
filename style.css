@@ -293,6 +293,10 @@ code {
 .terminal-frame__body {
   padding: var(--s-4) var(--s-4) var(--s-3);
   height: 580px;
+  /* content-box: o FitAddon do xterm usa a CSS height como área útil.
+     Com border-box (default do projeto) ele descontaria padding errado e
+     escondia as últimas linhas atrás do padding-bottom. */
+  box-sizing: content-box;
   background: var(--dark-bg);
   overscroll-behavior: contain;
 }
