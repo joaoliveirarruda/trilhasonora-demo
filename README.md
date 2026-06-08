@@ -1,6 +1,6 @@
 # Trilha Sonora — demo
 
-**URL pública:** <https://joaoliveirarruda.github.io/trilhaflix-demo/>
+**URL pública:** <https://joaoliveirarruda.github.io/trilhasonora-demo/>
 
 Demo navegável do mini-projeto de Python Básico do Trilha — um catálogo
 fictício de streaming musical com 60 conteúdos e 33 playlists. A página
