@@ -1,16 +1,20 @@
 const statusEl = document.getElementById("status");
+const statusLabelEl = statusEl.querySelector(".status__label");
 const termEl = document.getElementById("terminal");
 
 const term = new Terminal({
   fontSize: 14,
-  fontFamily: 'ui-monospace, "SF Mono", Menlo, monospace',
+  fontFamily: '"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace',
   theme: {
     background: "#000000",
-    foreground: "#e8e8ec",
+    foreground: "#f5f5f7",
     cursor: "#ff3b6b",
+    cursorAccent: "#000000",
+    brightBlack: "#6e6e78",
   },
   cursorBlink: true,
   convertEol: true,
+  scrollback: 2000,
 });
 const fitAddon = new FitAddon.FitAddon();
 term.loadAddon(fitAddon);
@@ -18,9 +22,9 @@ term.open(termEl);
 fitAddon.fit();
 window.addEventListener("resize", () => fitAddon.fit());
 
-function setStatus(text, kind = "") {
-  statusEl.textContent = text;
-  statusEl.className = kind;
+function setStatus(text, kind = "loading") {
+  statusLabelEl.textContent = text;
+  statusEl.className = `status status--${kind}`;
 }
 
 async function fetchText(url) {
@@ -47,7 +51,7 @@ from catalogo import Catalogo
 catalogo = Catalogo("/catalogo_dev.json")
 `);
 
-  setStatus("Pronto.", "ready");
+  setStatus("Pronto", "ready");
   return pyodide;
 }
 
@@ -209,11 +213,11 @@ const MENU = [
 async function loopMenu(api) {
   while (true) {
     term.writeln("");
-    term.writeln("TrilhaFlix");
-    term.writeln("==========");
+    term.writeln("\x1b[1;38;2;255;59;107mTrilha Sonora\x1b[0m");
+    term.writeln("\x1b[38;2;110;110;120m─────────────\x1b[0m");
     for (const linha of MENU) term.writeln(linha);
-    const escolha = (await lerLinha("> ")).trim();
-    if (escolha === "0") { term.writeln("Tchau."); return; }
+    const escolha = (await lerLinha("\x1b[1m> \x1b[0m")).trim();
+    if (escolha === "0") { term.writeln("\x1b[38;2;160;160;172mAté logo.\x1b[0m"); return; }
     try {
       if      (escolha === "1") await opBuscarUsuario(api);
       else if (escolha === "2") await opVerPlaylist(api);
@@ -232,14 +236,15 @@ async function loopMenu(api) {
 // --- Entry point ---
 
 bootstrap().then((pyodide) => {
-  term.writeln("TrilhaFlix — demo (catálogo: 60 itens)");
+  term.writeln("\x1b[38;2;160;160;172mTrilha Sonora — demo · catálogo carregado com 60 itens\x1b[0m");
   term.writeln("");
   const api = py(pyodide);
   loopMenu(api).catch((err) => {
-    term.writeln(`Loop encerrou com erro: ${err.message}`);
+    term.writeln(`\x1b[38;2;255;94;108mLoop encerrou com erro: ${err.message}\x1b[0m`);
     console.error(err);
   });
 }).catch((err) => {
-  setStatus("Erro no carregamento: " + err.message, "error");
+  setStatus("Erro: " + err.message, "error");
+  term.writeln(`\x1b[38;2;255;94;108mErro no carregamento: ${err.message}\x1b[0m`);
   console.error(err);
 });
