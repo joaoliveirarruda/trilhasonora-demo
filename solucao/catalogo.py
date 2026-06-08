@@ -29,6 +29,9 @@ class Catalogo:
         u = self._usuario_por_nome.get(nome)
         return u["id"] if u else None
 
+    def listar_usuarios(self):
+        return sorted(u["nome"] for u in self._dados["usuarios"])
+
     def playlist_de(self, usuario_id):
         u = self._usuario_por_id.get(usuario_id)
         return list(u["playlist"]) if u else None

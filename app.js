@@ -100,6 +100,7 @@ function py(pyodide) {
   const call = (m, ...args) => toJS(cat[m](...args));
   return {
     buscar_usuario_por_nome: (nome) => call("buscar_usuario_por_nome", nome),
+    listar_usuarios: () => call("listar_usuarios"),
     playlist_de: (uid) => call("playlist_de", uid),
     conteudo_na_posicao: (uid, pos) => call("conteudo_na_posicao", uid, pos),
     intersecao_playlists: (uids) => call("intersecao_playlists", pyodide.toPy(uids)),
@@ -215,6 +216,18 @@ async function opDadosDoConteudo(api) {
   }
 }
 
+async function opListarUsuarios(api) {
+  const nomes = api.listar_usuarios();
+  term.writeln(`${ANSI.green}${nomes.length}${ANSI.reset} usuários (ordem alfabética):`);
+  const cols = 3;
+  const maxLen = Math.max(...nomes.map((n) => n.length));
+  const cell = (s) => s.padEnd(maxLen + 2);
+  for (let i = 0; i < nomes.length; i += cols) {
+    const row = nomes.slice(i, i + cols).map(cell).join("");
+    term.writeln(`  ${row.trimEnd()}`);
+  }
+}
+
 async function opConteudosDoGenero(api) {
   const g = (await lerLinha("Gênero (ex.: Pop): ")).trim();
   const ids = api.conteudos_do_genero(g);
@@ -226,11 +239,12 @@ async function opConteudosDoGenero(api) {
 }
 
 const MENU = [
-  "1. Ver playlist completa de um usuário",
-  "2. Conteúdo na posição N da playlist",
-  "3. Interseção de playlists (N usuários)",
-  "4. Dados de um conteúdo (rating, duração, gêneros, plataformas, data, execuções)",
-  "5. Conteúdos de um gênero",
+  "1. Listar todos os usuários",
+  "2. Ver playlist completa de um usuário",
+  "3. Conteúdo na posição N da playlist",
+  "4. Interseção de playlists (N usuários)",
+  "5. Dados de um conteúdo (rating, duração, gêneros, plataformas, data, execuções)",
+  "6. Conteúdos de um gênero",
 ];
 
 async function loopMenu(api) {
@@ -241,11 +255,12 @@ async function loopMenu(api) {
     for (const linha of MENU) term.writeln(linha);
     const escolha = (await lerLinha(`${ANSI.greenB}> ${ANSI.reset}`)).trim();
     try {
-      if      (escolha === "1") await opVerPlaylist(api);
-      else if (escolha === "2") await opConteudoNaPosicao(api);
-      else if (escolha === "3") await opIntersecao(api);
-      else if (escolha === "4") await opDadosDoConteudo(api);
-      else if (escolha === "5") await opConteudosDoGenero(api);
+      if      (escolha === "1") await opListarUsuarios(api);
+      else if (escolha === "2") await opVerPlaylist(api);
+      else if (escolha === "3") await opConteudoNaPosicao(api);
+      else if (escolha === "4") await opIntersecao(api);
+      else if (escolha === "5") await opDadosDoConteudo(api);
+      else if (escolha === "6") await opConteudosDoGenero(api);
       else                       term.writeln("Opção inválida.");
     } catch (err) {
       term.writeln(`${ANSI.red}Erro: ${err.message}${ANSI.reset}`);
