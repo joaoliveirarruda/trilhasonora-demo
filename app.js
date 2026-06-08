@@ -4,13 +4,14 @@ const termEl = document.getElementById("terminal");
 
 const term = new Terminal({
   fontSize: 14,
-  fontFamily: '"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace',
+  fontFamily: 'ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace',
   theme: {
-    background: "#000000",
-    foreground: "#f5f5f7",
-    cursor: "#ff3b6b",
-    cursorAccent: "#000000",
-    brightBlack: "#6e6e78",
+    background: "#0B1230",     // navy do Trilha
+    foreground: "#FAF6EE",     // cream do Trilha
+    cursor: "#00C463",         // verde Trilha
+    cursorAccent: "#0B1230",
+    selectionBackground: "rgba(0, 196, 99, 0.30)",
+    brightBlack: "#5b6489",
   },
   cursorBlink: true,
   convertEol: true,
@@ -131,13 +132,24 @@ function fmtNumero(n) {
   return n.toLocaleString("pt-BR");
 }
 
+// --- ANSI helpers (paleta Trilha) ---
+const ANSI = {
+  reset:  "\x1b[0m",
+  green:  "\x1b[38;2;0;196;99m",       // primary
+  greenB: "\x1b[1;38;2;0;196;99m",
+  cream:  "\x1b[38;2;250;246;238m",
+  muted:  "\x1b[38;2;194;201;220m",
+  dim:    "\x1b[38;2;130;138;165m",
+  red:    "\x1b[38;2;255;100;110m",
+};
+
 // --- Handlers de cada opção do menu ---
 
 async function opBuscarUsuario(api) {
   const nome = await lerLinha("Nome do usuário: ");
   const id = api.buscar_usuario_por_nome(nome.trim());
   if (id === null) term.writeln(`Usuário "${nome}" não encontrado.`);
-  else            term.writeln(`Encontrado: ${nome} → id ${id}`);
+  else            term.writeln(`Encontrado: ${nome} → id ${ANSI.green}${id}${ANSI.reset}`);
 }
 
 async function opVerPlaylist(api) {
@@ -145,7 +157,7 @@ async function opVerPlaylist(api) {
   const playlist = api.playlist_de(uid);
   if (playlist === null) { term.writeln("Usuário inexistente."); return; }
   const nome = api.nome_do_usuario(uid);
-  term.writeln(`Playlist de ${nome} (${playlist.length} itens):`);
+  term.writeln(`Playlist de ${ANSI.green}${nome}${ANSI.reset} (${playlist.length} itens):`);
   for (let i = 0; i < playlist.length; i++) {
     term.writeln(`  ${(i + 1).toString().padStart(2)}. ${api.descricao_curta(playlist[i])}`);
   }
@@ -158,7 +170,7 @@ async function opConteudoNaPosicao(api) {
   if (Number.isNaN(pos)) { term.writeln("Posição inválida."); return; }
   const cid = api.conteudo_na_posicao(uid, pos);
   if (cid === null) term.writeln("Usuário inexistente ou posição fora do range.");
-  else              term.writeln(`Posição ${pos}: ${api.descricao_curta(cid)} (id ${cid})`);
+  else              term.writeln(`Posição ${pos}: ${api.descricao_curta(cid)} (id ${ANSI.green}${cid}${ANSI.reset})`);
 }
 
 async function opIntersecao(api) {
@@ -170,7 +182,7 @@ async function opIntersecao(api) {
     term.writeln("Sem interseção (ou algum usuário não existe).");
     return;
   }
-  term.writeln(`Interseção (${ids.length} conteúdos):`);
+  term.writeln(`Interseção (${ANSI.green}${ids.length}${ANSI.reset} conteúdos):`);
   for (const cid of ids) term.writeln(`  - ${api.descricao_curta(cid)} (${cid})`);
 }
 
@@ -179,14 +191,14 @@ async function opDadosDoConteudo(api) {
   const desc = api.descricao_curta(cid);
   if (desc === null) { term.writeln("Conteúdo inexistente."); return; }
   const tipo = api.tipo_de(cid);
-  term.writeln(desc);
-  term.writeln(`  rating:     ${api.rating_de(cid) ?? "—"}`);
-  term.writeln(`  duração:    ${fmtDuracao(api.duracao_total_de(cid))}`);
-  term.writeln(`  gêneros:    ${(api.generos_de(cid) || []).join(", ")}`);
-  term.writeln(`  plataformas:${" "}${(api.plataformas_de(cid) || []).join(", ")}`);
-  term.writeln(`  adicionado: ${api.data_adicionado_de(cid)}`);
+  term.writeln(`${ANSI.greenB}${desc}${ANSI.reset}`);
+  term.writeln(`  ${ANSI.muted}rating:     ${ANSI.reset}${api.rating_de(cid) ?? "—"}`);
+  term.writeln(`  ${ANSI.muted}duração:    ${ANSI.reset}${fmtDuracao(api.duracao_total_de(cid))}`);
+  term.writeln(`  ${ANSI.muted}gêneros:    ${ANSI.reset}${(api.generos_de(cid) || []).join(", ")}`);
+  term.writeln(`  ${ANSI.muted}plataformas:${ANSI.reset} ${(api.plataformas_de(cid) || []).join(", ")}`);
+  term.writeln(`  ${ANSI.muted}adicionado: ${ANSI.reset}${api.data_adicionado_de(cid)}`);
   if (tipo === "musica") {
-    term.writeln(`  execuções:  ${fmtNumero(api.execucoes_de(cid))}`);
+    term.writeln(`  ${ANSI.muted}execuções:  ${ANSI.reset}${fmtNumero(api.execucoes_de(cid))}`);
   }
 }
 
@@ -194,7 +206,7 @@ async function opConteudosDoGenero(api) {
   const g = (await lerLinha("Gênero (ex.: Pop): ")).trim();
   const ids = api.conteudos_do_genero(g);
   if (ids.length === 0) { term.writeln("Nenhum conteúdo nesse gênero."); return; }
-  term.writeln(`${ids.length} conteúdos em "${g}":`);
+  term.writeln(`${ANSI.green}${ids.length}${ANSI.reset} conteúdos em "${g}":`);
   const max = Math.min(ids.length, 20);
   for (let i = 0; i < max; i++) term.writeln(`  - ${api.descricao_curta(ids[i])} (${ids[i]})`);
   if (ids.length > max) term.writeln(`  … e mais ${ids.length - max}.`);
@@ -213,11 +225,11 @@ const MENU = [
 async function loopMenu(api) {
   while (true) {
     term.writeln("");
-    term.writeln("\x1b[1;38;2;255;59;107mTrilha Sonora\x1b[0m");
-    term.writeln("\x1b[38;2;110;110;120m─────────────\x1b[0m");
+    term.writeln(`${ANSI.greenB}Trilha Sonora${ANSI.reset}`);
+    term.writeln(`${ANSI.dim}─────────────${ANSI.reset}`);
     for (const linha of MENU) term.writeln(linha);
-    const escolha = (await lerLinha("\x1b[1m> \x1b[0m")).trim();
-    if (escolha === "0") { term.writeln("\x1b[38;2;160;160;172mAté logo.\x1b[0m"); return; }
+    const escolha = (await lerLinha(`${ANSI.greenB}> ${ANSI.reset}`)).trim();
+    if (escolha === "0") { term.writeln(`${ANSI.muted}Até logo.${ANSI.reset}`); return; }
     try {
       if      (escolha === "1") await opBuscarUsuario(api);
       else if (escolha === "2") await opVerPlaylist(api);
@@ -227,7 +239,7 @@ async function loopMenu(api) {
       else if (escolha === "6") await opConteudosDoGenero(api);
       else                       term.writeln("Opção inválida.");
     } catch (err) {
-      term.writeln(`Erro: ${err.message}`);
+      term.writeln(`${ANSI.red}Erro: ${err.message}${ANSI.reset}`);
       console.error(err);
     }
   }
@@ -236,15 +248,15 @@ async function loopMenu(api) {
 // --- Entry point ---
 
 bootstrap().then((pyodide) => {
-  term.writeln("\x1b[38;2;160;160;172mTrilha Sonora — demo · catálogo carregado com 60 itens\x1b[0m");
+  term.writeln(`${ANSI.muted}Trilha Sonora — demo · catálogo carregado com 60 itens${ANSI.reset}`);
   term.writeln("");
   const api = py(pyodide);
   loopMenu(api).catch((err) => {
-    term.writeln(`\x1b[38;2;255;94;108mLoop encerrou com erro: ${err.message}\x1b[0m`);
+    term.writeln(`${ANSI.red}Loop encerrou com erro: ${err.message}${ANSI.reset}`);
     console.error(err);
   });
 }).catch((err) => {
   setStatus("Erro: " + err.message, "error");
-  term.writeln(`\x1b[38;2;255;94;108mErro no carregamento: ${err.message}\x1b[0m`);
+  term.writeln(`${ANSI.red}Erro no carregamento: ${err.message}${ANSI.reset}`);
   console.error(err);
 });
