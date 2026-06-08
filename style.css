@@ -251,69 +251,6 @@ code {
 }
 
 /* ============================================================
-   Section labels
-   ============================================================ */
-.section-label {
-  margin: 0 0 var(--s-5);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-label);
-  color: var(--accent-green-dark);
-}
-
-/* ============================================================
-   Hints (cards com exemplos)
-   ============================================================ */
-.hints__grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: var(--s-3);
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.hint {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  padding: var(--s-4) var(--s-5);
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--r-card);
-  transition: transform var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out),
-              box-shadow var(--dur-fast) var(--ease-out);
-}
-.hint:hover {
-  transform: translateY(-1px);
-  border-color: rgba(0, 196, 99, 0.40);
-  box-shadow: var(--shadow-card);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hint { transition: none; }
-  .hint:hover { transform: none; }
-}
-
-.hint__step {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: var(--tracking-label);
-  color: var(--accent-green-dark);
-  text-transform: uppercase;
-}
-
-.hint__text {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--text);
-}
-
-/* ============================================================
    Terminal frame (macOS chrome) — interior dark navy
    ============================================================ */
 .terminal-frame {
@@ -357,68 +294,12 @@ code {
   padding: var(--s-4) var(--s-4) var(--s-3);
   height: 580px;
   background: var(--dark-bg);
+  overscroll-behavior: contain;
 }
 
 @media (max-width: 640px) {
   .terminal-frame__body { height: 480px; padding: var(--s-3); }
   .terminal-frame__title { display: none; }
-}
-
-/* ============================================================
-   Reference panel (collapsible)
-   ============================================================ */
-.reference__panel {
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--r-card);
-  overflow: hidden;
-}
-
-.reference__summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-3);
-  padding: var(--s-4) var(--s-5);
-  cursor: pointer;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-label);
-  color: var(--accent-green-dark);
-  list-style: none;
-  min-height: 44px;
-  transition: background var(--dur-fast) var(--ease-out);
-}
-.reference__summary::-webkit-details-marker { display: none; }
-.reference__summary:hover { background: var(--surface); }
-.reference__summary:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
-
-.reference__chevron {
-  color: var(--text-muted);
-  transition: transform var(--dur-fast) var(--ease-out);
-}
-.reference__panel[open] .reference__chevron { transform: rotate(180deg); }
-
-.reference__list {
-  list-style: none;
-  margin: 0;
-  padding: var(--s-4) var(--s-5) var(--s-5);
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-3);
-  border-top: 1px solid var(--border-subtle);
-}
-
-.reference__list li {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.55;
-}
-
-.reference__list strong {
-  color: var(--text);
-  font-weight: 600;
 }
 
 /* ============================================================

@@ -145,41 +145,54 @@ const ANSI = {
 
 // --- Handlers de cada opção do menu ---
 
-async function opBuscarUsuario(api) {
-  const nome = await lerLinha("Nome do usuário: ");
-  const id = api.buscar_usuario_por_nome(nome.trim());
-  if (id === null) term.writeln(`Usuário "${nome}" não encontrado.`);
-  else            term.writeln(`Encontrado: ${nome} → id ${ANSI.green}${id}${ANSI.reset}`);
+async function lerUsuarioPorNome(api, prompt = "Nome do usuário: ") {
+  const nome = (await lerLinha(prompt)).trim();
+  if (!nome) { term.writeln(`${ANSI.red}Nome vazio.${ANSI.reset}`); return null; }
+  const uid = api.buscar_usuario_por_nome(nome);
+  if (uid === null) {
+    term.writeln(`${ANSI.red}Usuário "${nome}" não encontrado.${ANSI.reset}`);
+    return null;
+  }
+  return { nome, uid };
 }
 
 async function opVerPlaylist(api) {
-  const uid = (await lerLinha("ID do usuário (ex.: u17): ")).trim();
-  const playlist = api.playlist_de(uid);
-  if (playlist === null) { term.writeln("Usuário inexistente."); return; }
-  const nome = api.nome_do_usuario(uid);
-  term.writeln(`Playlist de ${ANSI.green}${nome}${ANSI.reset} (${playlist.length} itens):`);
+  const u = await lerUsuarioPorNome(api);
+  if (!u) return;
+  const playlist = api.playlist_de(u.uid);
+  term.writeln(`Playlist de ${ANSI.green}${u.nome}${ANSI.reset} (${playlist.length} itens):`);
   for (let i = 0; i < playlist.length; i++) {
     term.writeln(`  ${(i + 1).toString().padStart(2)}. ${api.descricao_curta(playlist[i])}`);
   }
 }
 
 async function opConteudoNaPosicao(api) {
-  const uid = (await lerLinha("ID do usuário (ex.: u17): ")).trim();
+  const u = await lerUsuarioPorNome(api);
+  if (!u) return;
   const posStr = (await lerLinha("Posição (começando em 0): ")).trim();
   const pos = parseInt(posStr, 10);
   if (Number.isNaN(pos)) { term.writeln("Posição inválida."); return; }
-  const cid = api.conteudo_na_posicao(uid, pos);
-  if (cid === null) term.writeln("Usuário inexistente ou posição fora do range.");
-  else              term.writeln(`Posição ${pos}: ${api.descricao_curta(cid)} (id ${ANSI.green}${cid}${ANSI.reset})`);
+  const cid = api.conteudo_na_posicao(u.uid, pos);
+  if (cid === null) term.writeln("Posição fora do range da playlist.");
+  else              term.writeln(`Posição ${pos} de ${ANSI.green}${u.nome}${ANSI.reset}: ${api.descricao_curta(cid)}`);
 }
 
 async function opIntersecao(api) {
-  const raw = await lerLinha("IDs dos usuários separados por vírgula (ex.: u17,u23): ");
-  const uids = raw.split(",").map((s) => s.trim()).filter(Boolean);
-  if (uids.length < 2) { term.writeln("Informe pelo menos 2 usuários."); return; }
+  const raw = await lerLinha("Nomes dos usuários separados por vírgula (ex.: Nicholas, Uchoa): ");
+  const nomes = raw.split(",").map((s) => s.trim()).filter(Boolean);
+  if (nomes.length < 2) { term.writeln("Informe pelo menos 2 usuários."); return; }
+  const uids = [];
+  for (const nome of nomes) {
+    const uid = api.buscar_usuario_por_nome(nome);
+    if (uid === null) {
+      term.writeln(`${ANSI.red}Usuário "${nome}" não encontrado.${ANSI.reset}`);
+      return;
+    }
+    uids.push(uid);
+  }
   const ids = api.intersecao_playlists(uids);
   if (ids.length === 0) {
-    term.writeln("Sem interseção (ou algum usuário não existe).");
+    term.writeln("Sem interseção.");
     return;
   }
   term.writeln(`Interseção (${ANSI.green}${ids.length}${ANSI.reset} conteúdos):`);
@@ -213,13 +226,11 @@ async function opConteudosDoGenero(api) {
 }
 
 const MENU = [
-  "1. Buscar usuário por nome",
-  "2. Ver playlist completa de um usuário",
-  "3. Conteúdo na posição N da playlist",
-  "4. Interseção de playlists (N usuários)",
-  "5. Dados de um conteúdo (rating, duração, gêneros, plataformas, data, execuções)",
-  "6. Conteúdos de um gênero",
-  "0. Sair",
+  "1. Ver playlist completa de um usuário",
+  "2. Conteúdo na posição N da playlist",
+  "3. Interseção de playlists (N usuários)",
+  "4. Dados de um conteúdo (rating, duração, gêneros, plataformas, data, execuções)",
+  "5. Conteúdos de um gênero",
 ];
 
 async function loopMenu(api) {
@@ -229,14 +240,12 @@ async function loopMenu(api) {
     term.writeln(`${ANSI.dim}─────────────${ANSI.reset}`);
     for (const linha of MENU) term.writeln(linha);
     const escolha = (await lerLinha(`${ANSI.greenB}> ${ANSI.reset}`)).trim();
-    if (escolha === "0") { term.writeln(`${ANSI.muted}Até logo.${ANSI.reset}`); return; }
     try {
-      if      (escolha === "1") await opBuscarUsuario(api);
-      else if (escolha === "2") await opVerPlaylist(api);
-      else if (escolha === "3") await opConteudoNaPosicao(api);
-      else if (escolha === "4") await opIntersecao(api);
-      else if (escolha === "5") await opDadosDoConteudo(api);
-      else if (escolha === "6") await opConteudosDoGenero(api);
+      if      (escolha === "1") await opVerPlaylist(api);
+      else if (escolha === "2") await opConteudoNaPosicao(api);
+      else if (escolha === "3") await opIntersecao(api);
+      else if (escolha === "4") await opDadosDoConteudo(api);
+      else if (escolha === "5") await opConteudosDoGenero(api);
       else                       term.writeln("Opção inválida.");
     } catch (err) {
       term.writeln(`${ANSI.red}Erro: ${err.message}${ANSI.reset}`);
