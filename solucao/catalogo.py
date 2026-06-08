@@ -22,14 +22,16 @@ class Catalogo:
             ids.sort()
 
         self._usuario_por_id = {u["id"]: u for u in self._dados["usuarios"]}
-        self._usuario_por_nome = {u["nome"]: u for u in self._dados["usuarios"]}
+        # Index lowercased -> case-insensitive lookup em O(1). O nome
+        # "display" continua intacto em u["nome"].
+        self._usuario_por_nome = {u["nome"].lower(): u for u in self._dados["usuarios"]}
 
         self._fila = collections.deque()
 
     # --- Métodos prescritos pelo ENUNCIADO ---
 
     def buscar_usuario_por_nome(self, nome):
-        u = self._usuario_por_nome.get(nome)
+        u = self._usuario_por_nome.get(nome.lower())
         return u["id"] if u else None
 
     def listar_usuarios(self):
