@@ -7,6 +7,8 @@
   <meta name="description" content="Demo navegável do mini-projeto de Python do Trilha. Um catálogo de streaming musical rodando 100% no browser via Pyodide.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
   <link rel="stylesheet" href="style.css">
+  <!-- ?embed=1: só o terminal, sem hero nem footer (iframe no otrilha.com) -->
+  <script>if (new URLSearchParams(location.search).has("embed")) document.documentElement.classList.add("embed");</script>
 </head>
 <body class="bg-grid">
   <main class="shell">
